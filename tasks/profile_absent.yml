@@ -1,0 +1,10 @@
+---
+
+- name: "Remove template for profile {{ macos_profile__profile }}"
+  file:
+    path: "{{ macos_profile__destinationFolder }}/{{ macos_profile__profile }}"
+    state: absent
+
+- name: "Remove profile {{ macos_profile__profile }}"
+  command: /usr/bin/profiles -Rp "{{ macos_profile__profile }}"
+  when: installedprofile.rc == 0

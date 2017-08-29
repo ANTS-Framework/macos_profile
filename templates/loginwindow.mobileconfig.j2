@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+
+    <!-- Profile Payload Content -->
+		<key>PayloadContent</key>
+		<array>
+
+			<!-- Manage login window display options -->
+			<dict>
+				<key>AdminHostInfo</key>
+				<string>HostName</string>
+				<key>AdminMayDisableMCX</key>
+				<false/>
+				<key>LoginwindowText</key>
+				<string>{% for text in macos_profile__loginwindow_message %}{{ text }}{% endfor %}</string>
+				<key>RestartDisabled</key>
+				<{{ macos_profile__loginwindow_restartdisabled }}/>
+				<key>RestartDisabledWhileLoggedIn</key>
+				<{{ macos_profile__loginwindow_RestartDisabledWhileLoggedIn }}/>
+				<key>RetriesUntilHint</key>
+				<integer>{{ macos_profile__loginwindow_retriesuntilhint }}</integer>
+				<key>SHOWFULLNAME</key>
+				<{{ macos_profile__loginwindow_showfullname }}/>
+				<key>SHOWOTHERUSERS_MANAGED</key>
+				<{{ macos_profile__loginwindow_showotherusers_managed }}/>
+				<key>ShutDownDisabled</key>
+				<{{ macos_profile__loginwindow_shutdowndisabled }}/>
+				<key>ShutDownDisabledWhileLoggedIn</key>
+				<{{ macos_profile__loginwindow_ShutDownDisabledWhileLoggedIn }}/>
+				<key>SleepDisabled</key>
+				<{{ macos_profile__loginwindow_sleepdisabled }}/>
+				<key>HideAdminUsers</key>
+				<{{ macos_profile__loginwindow_HideAdminUsers }}/>
+				<key>AlwaysShowWorkgroupDialog</key>
+                <{{ macos_profile__loginwindow_AlwaysShowWorkgroupDialog }}/>
+                <key>DisableLoginItemsSuppression</key>
+                <{{ macos_profile__loginwindow_disableLoginItemsSuppression }}/>
+				<key>RetriesUntilHint</key>
+				<integer>{{ macos_profile__loginwindow_RetriesUntilHint }}</integer>
+				<key>PayloadOrganization</key>
+				<string>{{ macos_profile__PayloadOrganization }}</string>
+
+				{% if macos_profile__loginwindow_autoLoginUser_enabled %}
+				<!-- Enable autologin at boot -->
+				<key>autoLoginUser</key>
+				<string>{{ macos_profile__loginwindow_autoLoginUser }}</string>
+				{% endif %}
+
+                <!-- Payload Information -->
+                <key>PayloadDescription</key>
+                <string></string>
+				<key>PayloadDisplayName</key>
+				<string>Login Window</string>
+				<key>PayloadEnabled</key>
+				<true/>
+				<key>PayloadIdentifier</key>
+				<string>FCF00C39-81C8-4F7F-B99E-BE8CF5B8B51E</string>
+				<key>PayloadType</key>
+				<string>com.apple.loginwindow</string>
+				<key>PayloadUUID</key>
+				<string>D18CADFD-61F0-4E3D-830B-57FBB789C6B5</string>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+			</dict>
+
+			<!-- Enable or disable guesst account -->
+			<dict>
+				<key>DisableGuestAccount</key>
+				<{{ macos_profile__loginwindow_disableguestaccount }}/>
+				<key>EnableGuestAccount</key>
+				<{{ macos_profile__loginwindow_enableguestaccount }}/>
+
+                <!-- Payload Information -->
+                <key>PayloadDescription</key>
+                <string></string>
+				<key>PayloadDisplayName</key>
+				<string>Login Window:  MCX Preferences</string>
+				<key>PayloadEnabled</key>
+				<true/>
+				<key>PayloadIdentifier</key>
+				<string>8BA010FB-5D35-429C-8CD6-3D9F2FCABD10</string>
+				<key>PayloadType</key>
+				<string>com.apple.MCX</string>
+				<key>PayloadUUID</key>
+				<string>31BB2309-28C6-40AE-B04E-B528B5203773</string>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+			</dict>
+
+			<!-- Enable or disable multi user sessions -->
+			<dict>
+				<key>MultipleSessionEnabled</key>
+				<{{ macos_profile__loginwindow_multiplesessionenabled }}/>
+
+				<!-- Log out user after n seconds of inactivity -->
+				<key>com.apple.autologout.AutoLogOutDelay</key>
+				<integer>{{ macos_profile__loginwindow_autologoutAutoLogOutDelay }}</integer>
+				<key>com.apple.logout.AutoLogOutDelay</key>
+				<integer>{{ macos_profile__loginwindow_logoutAutoLogOutDelay }}</integer>
+
+                <!-- Payload Information -->
+                <key>PayloadDescription</key>
+                <string></string>
+				<key>PayloadDisplayName</key>
+				<string>Login Window:  Global Preferences</string>
+				<key>PayloadEnabled</key>
+				<true/>
+				<key>PayloadIdentifier</key>
+				<string>B5C840A8-79FC-47C9-992A-477FC94E848F</string>
+				<key>PayloadOrganization</key>
+				<string>{{ macos_profile__PayloadOrganization }}</string>
+				<key>PayloadType</key>
+				<string>.GlobalPreferences</string>
+				<key>PayloadUUID</key>
+				<string>1B203E33-CD61-4D9B-BE6A-898D9054FD20</string>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+			</dict>
+
+            {% if macos_profile__loginwindow_screensaver_managed %}
+			<!-- Manage Screen Saver -->
+			<dict>
+				<key>idleTime</key>
+				<integer>{{ macos_profile__loginwindow_screensaver_idleTime }}</integer>
+				<key>loginWindowIdleTime</key>
+				<integer>{{ macos_profile__loginwindow_screensaver_loginWindowIdleTime }}</integer>
+				<key>loginWindowModulePath</key>
+				<string>{{ macos_profile__loginwindow_screensaver_loginWindowModulePath }}</string>
+				<key>askForPassword</key>
+				<{{ macos_profile__loginwindow_screensaver_askForPassword }}/>
+				<key>askForPasswordDelay</key>
+				<integer>{{ macos_profile__loginwindow_screensaver_askForPasswordDelay }}</integer>
+
+                <!-- Payload Information -->
+				<key>PayloadDescription</key>
+				<string></string>
+				<key>PayloadDisplayName</key>
+				<string>Login Window:  Screen Saver Preferences</string>
+				<key>PayloadEnabled</key>
+				<true/>
+				<key>PayloadIdentifier</key>
+				<string>B429E974-2BAC-4B12-8763-6E37B9897BB7</string>
+				<key>PayloadOrganization</key>
+				<string>{{ macos_profile__PayloadOrganization }}</string>
+				<key>PayloadType</key>
+				<string>com.apple.screensaver</string>
+				<key>PayloadUUID</key>
+				<string>1192C36C-351D-4DD9-B781-4249FB254D78</string>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+			</dict>
+            {% endif %}
+
+		</array>
+
+
+        <!-- Profile Description -->
+		<key>PayloadDescription</key>
+		<string>{{ macos_profile__loginwindow_PayloadDescription }}</string>
+		<key>PayloadDisplayName</key>
+		<string>{{ macos_profile__loginwindow_PayloadDisplayName }}</string>
+        <key>PayloadUUID</key>
+        <string>007C6659-9566-41F7-B175-91643190EC54</string>
+
+
+        <!-- Organisation Information (Identical for every Profile) -->
+        <key>PayloadEnabled</key>
+        <true/>
+        <key>PayloadIdentifier</key>
+        <string>{{ macos_profile__profile }}</string>
+        <key>PayloadOrganization</key>
+        <string>{{ macos_profile__PayloadOrganization }}</string>
+        <key>PayloadRemovalDisallowed</key>
+        <{{ macos_profile__PayloadRemovalDisallowed }}/>
+        <key>PayloadScope</key>
+        <string>System</string>
+        <key>PayloadType</key>
+        <string>Configuration</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+
+
+</dict>
+</plist>

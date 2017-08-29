@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+
+<!--
+Copyright 2013-2017 Greg Neagle
+Modifications copyright 2017 IT Services University Basel
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<dict>
+
+
+    <!-- Profile Payload Content -->
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.MCXAirPort</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>DisableAirPort</key>
+								<{{ macos_profile__airport_DisableAirPort }}/>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+
+            <!-- Payload Information -->
+			<key>PayloadDisplayName</key>
+			<string>Airport Settings</string>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadIdentifier</key>
+			<string>FADDB05E-7486-4380-9427-17416AD27A08</string>
+			<key>PayloadOrganization</key>
+			<string>{{ macos_profile__PayloadOrganization }}</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>14977AC8-5192-4CD0-8243-65628F62CF75</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+
+		</dict>
+	</array>
+
+
+    <!-- Profile Description -->
+	<key>PayloadDescription</key>
+	<string>{{ macos_profile__airport_PayloadDescription }}</string>
+	<key>PayloadDisplayName</key>
+	<string>{{ macos_profile__airport_PayloadDisplayName }}</string>
+	<key>PayloadUUID</key>
+	<string>BF329423-78BE-4CA5-95AD-F521B7DF4712</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+	<key>PayloadOrganization</key>
+	<string>{{ macos_profile__PayloadOrganization }}</string>
+	<key>PayloadRemovalDisallowed</key>
+	<{{ macos_profile__PayloadRemovalDisallowed }}/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+
+
+</dict>
+</plist>

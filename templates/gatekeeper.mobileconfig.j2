@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+
+    <!-- Profile Payload Content -->
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+
+            <!-- com.apple.systempolicy.control -->
+			<key>AllowIdentifiedDevelopers</key>
+			<{{ macos_profile__gatekeeper_AllowIdentifiedDevelopers }}/>
+			<key>EnableAssessment</key>
+			<{{ macos_profile__gatekeeper_EnableAssessment }}/>
+
+            <!-- Payload Information -->
+			<key>PayloadDisplayName</key>
+			<string>Gatekeeper Settings</string>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadIdentifier</key>
+			<string>87843684-F9DC-47F8-9D1E-644FF09C7527</string>
+			<key>PayloadType</key>
+			<string>com.apple.systempolicy.control</string>
+			<key>PayloadUUID</key>
+			<string>FFB8183F-AA6B-4D96-AE4A-85E55C7C4773</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+
+
+		</dict>
+	</array>
+
+
+    <!-- Profile Description -->
+	<key>PayloadDescription</key>
+	<string>{{ macos_profile__gatekeeper_PayloadDescription }}</string>
+	<key>PayloadDisplayName</key>
+	<string>{{ macos_profile__gatekeeper_PayloadDisplayName }}</string>
+	<key>PayloadUUID</key>
+	<string>934F32DE-719A-4881-B90B-6C49E7118DF2</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+	<key>PayloadOrganization</key>
+	<string>{{ macos_profile__PayloadOrganization }}</string>
+	<key>PayloadRemovalDisallowed</key>
+	<{{ macos_profile__PayloadRemovalDisallowed }}/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+
+
+</dict>
+</plist>

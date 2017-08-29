@@ -1,0 +1,343 @@
+---
+# I would love to include a separate defaults file
+# for every profile. Sadly, ansible has no plans on
+# implementing that. See https://github.com/ansible/ansible/issues/6756
+
+# global values
+macos_profile__identifierPrefix: "com.pretendcorp.it.macos"
+macos_profile__PayloadOrganization: "Pretend Corp"
+macos_profile__PayloadRemovalDisallowed: "true"
+macos_profile__destinationFolder: "/usr/local/pretendcorp/profiles"
+
+# airport
+macos_profile__airport_PayloadDisplayName: "Air Port"
+macos_profile__airport_PayloadDescription: "Air Port settings"
+
+macos_profile__airport_DisableAirPort: "true"
+
+# applicationaccess
+macos_profile__applicationaccess_PayloadDisplayName: "Application access"
+macos_profile__applicationaccess_PayloadDescription: "Settings to limit application access"
+
+macos_profile__applicationaccess_AutoSubmit: "false"
+macos_profile__applicationaccess_allowCloudDocumentSync: "true"
+macos_profile__applicationaccess_allowDiagnosticSubmission: "false"
+macos_profile__applicationaccess_allowSpotlightInternetResults: "false"
+
+macos_profile__applicationaccess_new_PayloadDisplayName: "Application access new"
+macos_profile__applicationaccess_new_PayloadDescription: "Black and wihtelists to limit application access"
+
+macos_profile__applicationaccess_new_whiteList:
+        - { path: "/Applications/Safari.app", bundleID: "com.apple.Safari", displayName: "Safari" }
+        - { path: "/Library/Application Support", bundleID: "com.symantec.uiagent.application", displayName: "SymUIAgent" }
+        - { path: "/Applications/Symantec Solutions", bundleID: "com.symantec.LiveUpdateApplication", displayName: "LifeUpdateApplication" }
+
+# directory
+macos_profile__directory_PayloadDisplayName: "Directory Binding"
+macos_profile__directory_PayloadDescription: "Joining Computer Object to a domain"
+
+macos_profile__directory_ADOrganizationalUnit: "predend corp"
+macos_profile__directory_ADDomainAdminGroupList:
+  - "admin"
+  - "wheel"
+macos_profile__directory_ADAllowMultiDomainAuth: "true"
+macos_profile__directory_ADAllowMultiDomainAuthFlag: "true"
+macos_profile__directory_ADCreateMobileAccountAtLogin: "true"
+macos_profile__directory_ADCreateMobileAccountAtLoginFlag: "true"
+macos_profile__directory_ADDefaultUserShell: "/bin/bash"
+macos_profile__directory_ADDefaultUserShellFlag: "true"
+macos_profile__directory_ADDomainAdminGroupListFlag: "true"
+macos_profile__directory_ADForceHomeLocal: "true"
+macos_profile__directory_ADForceHomeLocalFlag: "true"
+macos_profile__directory_ADMapGGIDAttribute: "gidNumber"
+macos_profile__directory_ADMapGGIDAttributeFlag: "true"
+macos_profile__directory_ADMapGIDAttribute: "gidNumber"
+macos_profile__directory_ADMapGIDAttributeFlag: "true"
+macos_profile__directory_ADMapUIDAttribute: "uidNumber"
+macos_profile__directory_ADMapUIDAttributeFlag: "true"
+macos_profile__directory_ADMountStyle: "smb"
+macos_profile__directory_ADNamespace: "domain"
+macos_profile__directory_ADNamespaceFlag: "true"
+macos_profile__directory_ADPacketEncrypt: "allow"
+macos_profile__directory_ADPacketEncryptFlag: "true"
+macos_profile__directory_ADPacketSign: "allow"
+macos_profile__directory_ADPacketSignFlag: "true"
+macos_profile__directory_ADTrustChangePassIntervalDays: "180"
+macos_profile__directory_ADTrustChangePassIntervalDaysFlag: "true"
+macos_profile__directory_ADUseWindowsUNCPath: "true"
+macos_profile__directory_ADUseWindowsUNCPathFlag: "true"
+macos_profile__directory_ADWarnUserBeforeCreatingMAFlag: "true"
+macos_profile__directory_ClientID: "%ComputerName%"
+macos_profile__directory_HostName: "pretendcorp.ad.com"
+macos_profile__directory_Password: "ChangeMePlease"
+macos_profile__directory_UserName: "dedicated-bind-user"
+
+# disable autoupdates
+macos_profile__disableautoupdates_PayloadName: "Disable Auto Updates"
+macos_profile__disableautoupdates_PayloadDescription: "Disables auto Updates for Applications"
+
+macos_profile__disableautoupdates_adium: true
+macos_profile__disableautoupdates_itunes: true
+macos_profile__disableautoupdates_office2016: true
+macos_profile__disableautoupdates_sublime2: true
+macos_profile__disableautoupdates_vlc: true
+macos_profile__disableautoupdates_xquartz: true
+macos_profile__disableautoupdates_switchdrive: true
+macos_profile__disableautoupdates_evernote: true
+macos_profile__disableautoupdates_mactracker: true
+macos_profile__disableautoupdates_teamviewer: true
+macos_profile__disableautoupdates_f5: true
+macos_profile__disableautoupdates_bibdesk: true
+macos_profile__disableautoupdates_karabiner: true
+
+# dock
+macos_profile__dock_PayloadDisplayName: "Dock"
+macos_profile__dock_PayloadDescription: "Settings for managed dock"
+
+macos_profile__dock_manage_MCXDockSpecialFolders: true
+macos_profile__dock_MCXDockSpecialFolders:
+ - "AddDockMCXMyApplicationsFolder"
+ - "AddDockMCXDocumentsFolder"
+ - "AddDockMCXOriginalNetworkHomeFolder"
+macos_profile__dock_PayloadEnabled: "true"
+macos_profile__dock_autohide: "false"
+macos_profile__dock_contents_immutable: "true"
+macos_profile__dock_largesize: "64"
+macos_profile__dock_tilesize: "64"
+macos_profile__dock_launchanim: "true"
+macos_profile__dock_launchanim_immutable: "true"
+macos_profile__dock_magnification: "false"
+macos_profile__dock_magnify_immutable: "true"
+macos_profile__dock_magsize_immutable: "true"
+macos_profile__dock_mineffect: "generic"
+macos_profile__dock_mineffect_immutable: "true"
+macos_profile__dock_minimize_to_application: "false"
+macos_profile__dock_minimize_to_application_immutable: "true"
+macos_profile__dock_orientation: "bottom"
+macos_profile__dock_position_immutable: "true"
+macos_profile__dock_show_process_indicators: "true"
+macos_profile__dock_show_process_indicators_immutable: "true"
+macos_profile__dock_size_immutable: "true"
+macos_profile__dock_static_apps:
+ - { _CFURLString: "/Applications/Safari.app", _CFURLStringType: "0", file_label: "Safari" }
+macos_profile__dock_static_only: "false"
+
+# energy saver
+macos_profile__energysaver_PayloadDisplayName: "Energy Saver"
+macos_profile__energysaver_PayloadDescription: "Default Energy Saver Profile"
+
+## Laptop
+macos_profile__energysaver_AutomaticRestartOnPowerLoss: "1"
+macos_profile__energysaver_DiskSleepTimer_boolean: "true"
+macos_profile__energysaver_DisplaySleepTimer: "15"
+macos_profile__energysaver_DynamicPowerStep: "1"
+macos_profile__energysaver_ReduceProcessorSpeed: "0"
+macos_profile__energysaver_SleepOnPowerButton: "1"
+macos_profile__energysaver_SystemSleepTimer: "10"
+macos_profile__energysaver_WakeOnLAN: "1"
+
+## Laptop Battery
+macos_profile__energysaver_battery_AutomaticRestartOnPowerLoss: "1"
+macos_profile__energysaver_battery_DiskSleepTimer_boolean: "true"
+macos_profile__energysaver_battery_DisplaySleepTimer: "15"
+macos_profile__energysaver_battery_DynamicPowerStep: "1"
+macos_profile__energysaver_battery_ReduceProcessorSpeed: "0"
+macos_profile__energysaver_battery_SleepOnPowerButton: "1"
+macos_profile__energysaver_battery_SystemSleepTimer: "10"
+macos_profile__energysaver_battery_WakeOnLAN: "1"
+
+## Desktop
+macos_profile__energysaver_desktop_AutomaticRestartOnPowerLoss: "1"
+macos_profile__energysaver_desktop_DiskSleepTimer_boolean: "true"
+macos_profile__energysaver_desktop_DisplaySleepTimer: "5"
+macos_profile__energysaver_desktop_SleepOnPowerButton: "1"
+macos_profile__energysaver_desktop_SystemSleepTimer: "10"
+macos_profile__energysaver_desktop_WakeOnLAN: "1"
+macos_profile__energysaver_desktop_schedule_is_set: false # Default: Schedule is inactive
+macos_profile__energysaver_desktop_schedule_shutdown_time: "1320" # 22:00
+macos_profile__energysaver_desktop_schedule_shutdown_weekdays: "31" # Every Weekday
+macos_profile__energysaver_desktop_schedule_wakepower_time: "420" # 7:00
+macos_profile__energysaver_desktop_schedule_wakepower_weekdays: "31" # Every Weekday
+
+# familycontrols
+macos_profile__familycontrols_PayloadDisplayName: "Family Controls"
+macos_profile__familycontrols_PayloadDescription: "Familiy Control Restrictions"
+
+macos_profile__familycontrols_whitelistEnabled: "true"
+macos_profile__familycontrols_whitelistEnabled_enabled: false
+macos_profile__familycontrols_filterWhitelist:
+        - "https://www.apple.com/"
+        - "https://www.google.ch/"
+macos_profile__familycontrols_restrictWeb: "true"
+macos_profile__familycontrols_useContentFilter: "true"
+macos_profile__familycontrols_familyControlsEnabled: "true"
+macos_profile__familycontrols_curfews_deny_evening_start: "22:00:00"
+macos_profile__familycontrols_curfews_deny_evening_end: "23:59:59"
+macos_profile__familycontrols_curfews_deny_morning_start: "00:00:00"
+macos_profile__familycontrols_curfews_deny_morning_end: "07:00:00"
+macos_profile__familycontrols_curfews_days:
+        - "monday"
+        - "tuesday"
+        - "wednesday"
+        - "thursday"
+        - "friday"
+        - "saturday"
+        - "sunday"
+
+# finder
+macos_profile__finder_PayloadDisplayName: "Finder"
+macos_profile__finder_PayloadDescription: "Default finder settings"
+
+macos_profile__finder_InterfaceLevel: "Full"
+macos_profile__finder_ProhibitBurn: "false"
+macos_profile__finder_ProhibitConnectTo: "false"
+macos_profile__finder_ProhibitEject: "false"
+macos_profile__finder_ProhibitGoToFolder: "false"
+macos_profile__finder_ShowExternalHardDrivesOnDesktop: "true"
+macos_profile__finder_ShowHardDrivesOnDesktop: "true"
+macos_profile__finder_ShowMountedServersOnDesktop: "true"
+macos_profile__finder_ShowRemovableMediaOnDesktop: "true"
+macos_profile__finder_WarnOnEmptyTrash: "true"
+
+# gatekeeper
+macos_profile__gatekeeper_PayloadDisplayName: "Gatekeeper"
+macos_profile__gatekeeper_PayloadDescription: "Default Gatekeeper settings"
+
+macos_profile__gatekeeper_AllowIdentifiedDevelopers: "false"
+macos_profile__gatekeeper_EnableAssessment: "false"
+
+# loginitems
+macos_profile__loginitems_PayloadDisplayName: "Login Items"
+macos_profile__loginitems_PayloadDescription: "Preset login items"
+
+macos_profile__loginitems_apps_enabled: false # Default: Don't add apps to login window
+macos_profile__loginitems_apps:
+    - { path: "/Applications/Utilities/Terminal.app", hide: "true" }
+macos_profile__loginitems_network_mounts_enabled: false # Default: Dont' add network mounts
+macos_profile__loginitems_network_mounts:
+    - { url: "smb://guest:@pretendcorp.com/home/secret", hide: "false" }
+macos_profile__loginitems_items_enabled: false # Default: Dont' add items
+macos_profile__loginitems_items:
+    - { path: "/Volumes", hide: "false" }
+
+# loginwindow
+macos_profile__loginwindow_PayloadDisplayName: "Login Window"
+macos_profile__loginwindow_PayloadDescription: "Default login window"
+
+macos_profile__loginwindow_message:
+  - "Pretend Corp\n"
+  - "Message of the Day"
+macos_profile__loginwindow_AlwaysShowWorkgroupDialog: "false"
+macos_profile__loginwindow_disableLoginItemsSuppression: "false"
+macos_profile__loginwindow_restartdisabled: "false"
+macos_profile__loginwindow_RestartDisabledWhileLoggedIn: "false"
+macos_profile__loginwindow_shutdowndisabled: "false"
+macos_profile__loginwindow_ShutDownDisabledWhileLoggedIn: "false"
+macos_profile__loginwindow_retriesuntilhint: "3"
+macos_profile__loginwindow_showfullname: "true"
+macos_profile__loginwindow_showotherusers_managed: "false"
+macos_profile__loginwindow_HideAdminUsers: "true"
+macos_profile__loginwindow_sleepdisabled: "false"
+macos_profile__loginwindow_multiplesessionenabled: "false"
+macos_profile__loginwindow_RetriesUntilHint: "3"
+macos_profile__loginwindow_screensaver_managed: false
+macos_profile__loginwindow_screensaver_idleTime: "1200"
+macos_profile__loginwindow_screensaver_loginWindowIdleTime: "1200"
+macos_profile__loginwindow_screensaver_loginWindowModulePath: "/System/Library/Screen Savers/Flurry.saver"
+macos_profile__loginwindow_screensaver_askForPassword: "true"
+macos_profile__loginwindow_screensaver_askForPasswordDelay: "10"
+macos_profile__loginwindow_logoutAutoLogOutDelay: "0" # Disabled
+macos_profile__loginwindow_autologoutAutoLogOutDelay: "0" # Disabled
+
+macos_profile__loginwindow_disableguestaccount: "true"
+macos_profile__loginwindow_enableguestaccount: "false"
+macos_profile__loginwindow_autoLoginUser_enabled: false
+macos_profile__loginwindow_autoLoginUser: "Guest"
+
+# menuextras
+macos_profile__menuextras_PayloadDisplayName: "Menu Extras Icon"
+macos_profile__menuextras_PayloadDescription: "Menu Extras settings"
+
+macos_profile__menuextras_Airplay_showInMenuBarIfPresent: "false"
+macos_profile__menuextras_airport: "false"
+macos_profile__menuextras_battery: "true"
+macos_profile__menuextras_bluetooth: "true"
+macos_profile__menuextras_clock: "true"
+macos_profile__menuextras_display: "false"
+macos_profile__menuextras_remotedesktop: "false"
+macos_profile__menuextras_timemachine: "false"
+macos_profile__menuextras_user: "true"
+
+# munki
+macos_profile__munki_PayloadDisplayName: "Munki"
+macos_profile__munki_PayloadDescription: "Client Settings for Munki"
+
+macos_profile__munki_AppleSoftwareUpdatesOnly: "false"
+macos_profile__munki_ClientIdentifier: ""
+macos_profile__munki_ClientResourcesFilename: ""
+macos_profile__munki_DaysBetweenNotifications: "1"
+macos_profile__munki_FollowHTTPRedirects: "none"
+macos_profile__munki_InstallAppleSoftwareUpdates: "true"
+macos_profile__munki_LocalOnlyManifest: "localonly_manifest.plist"
+macos_profile__munki_LogFile: "/Library/Managed Installs/Logs/ManagedSoftwareUpdate.log"
+macos_profile__munki_LogToSyslog: "false"
+macos_profile__munki_LoggingLevel: "1"
+macos_profile__munki_ManagedInstallDir: "/Library/Managed Installs"
+macos_profile__munki_ManifestURL: "https://munki.pretendcorp.com/manifests"
+macos_profile__munki_PackageVerificationMode: "hash"
+macos_profile__munki_PerformAuthRestarts: "true"
+macos_profile__munki_SoftwareRepoURL: "https://munki.pretendcorp.com/software"
+macos_profile__munki_SuppressAutoInstall: "false"
+macos_profile__munki_SuppressStopButtonOnInstall: "false"
+macos_profile__munki_SuppressUserNotification: "false"
+macos_profile__munki_UnattendedAppleUpdates: "false"
+macos_profile__munki_UseClientCertificate: "0"
+
+# safari
+macos_profile__safari_PayloadDisplayName: "Safari"
+macos_profile__safari_PayloadDescription: "Default settings for safari"
+
+macos_profile__safari_HomePage: "https://www.apple.com/"
+macos_profile__safari_NewWindowBehavior: "0"   # New windows open with Homepage
+macos_profile__safari_NewTabBehavior: "0" # New tab open with Homepage
+macos_profile__safari_ShowFavoritesBar: "false"
+macos_profile__safari_AutoFillCreditCardData: "false"
+macos_profile__safari_AutoFillPasswords: "false"
+macos_profile__safari_AutoFillMiscellaneousForms: "false"
+macos_profile__safari_AutoFillFromAddressBook: "false"
+macos_profile__safari_DownloadsPath: "~/Downloads"
+macos_profile__safari_DownloadsClearingPolicy: "1" # Remove downloads when safari quits
+macos_profile__safari_AlwaysShowTabBar: "true"
+macos_profile__safari_LastSafariVersionWithWelcomePage: "99.0" # Turn off Safari Welcome Page
+macos_profile__safari_SidebarViewModeIdentifier: "Bookmarks"
+macos_profile__safari_ShowSidebarInNewWindows: "0"
+
+# sal
+macos_profile__sal_PayloadDisplayName: "Sal"
+macos_profile__sal_PayloadDescription: "Client Settings for Sal"
+
+macos_profile__sal_BasicAuth: "true"
+macos_profile__sal_ServerURL: "https://sal.pretendcorp.com"
+macos_profile__sal_SyncScripts: "true"
+
+# skipsetup
+macos_profile__skipsetup_PayloadDisplayName: "Skip setup"
+macos_profile__skipsetup_PayloadDescription: "Skip setup"
+
+macos_profile__skipsetup_PayloadDisplayNameDiagnostics: "Disable Apple Diagnostics"
+macos_profile__skipsetup_SkipSiriSetup: "true"
+macos_profile__skipsetup_SkipiCloudLoginForStorageServices: "true"
+macos_profile__skipsetup_SkipCloudSetup: "true"
+macos_profile__skipsetup_SkipSyncSetup: "true"
+macos_profile__skipsetup_SkipSyncSetup2: "true"
+macos_profile__skipsetup_SkipAvatarSetup: "true"
+macos_profile__skipsetup_SkipTouchIDSetup: "true"
+macos_profile__skipsetup_SkipApplePaySetup: "true"
+macos_profile__skipsetup_DisableAppleDiagonstics: "true"
+
+# software update
+macos_profile__softwareupdate_PayloadDisplayName: "Apple Software Updates"
+macos_profile__softwareupdate_PayloadDescription: "Set Apple Software Update Server"
+
+macos_profile__CatalogURL: "http://su.pretendcorp.com:8088/index.sucatalog"
+macos_profile__AllowPreReleaseInstallation: "false"

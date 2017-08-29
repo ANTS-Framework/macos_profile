@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+
+    <!-- Profile Payload Content -->
+	<key>PayloadContent</key>
+	<array>
+
+		<!-- Web Resctrictions -->
+		<dict>
+			<key>filterWhitelist</key>
+			<array>
+				{% for url in macos_profile__familycontrols_filterWhitelist %}
+				<string>{{ url }}</string>
+				{% endfor %}
+			</array>
+			<key>restrictWeb</key>
+			<{{ macos_profile__familycontrols_restrictWeb }}/>
+			<key>useContentFilter</key>
+			<{{ macos_profile__familycontrols_useContentFilter }}/>
+			<key>whitelistEnabled</key>
+			<{{ macos_profile__familycontrols_whitelistEnabled }}/>
+            {% if macos_profile__familycontrols_whitelistEnabled_enabled %}
+                <key>siteWhitelist</key>
+                <array>
+                    {% for site in macos_profile__familycontrols_siteWhitelist %}
+                    <dict>
+                        <key>address</key>
+                        <string>{{ site.address }}</string>
+                        <key>bookmarkPath</key>
+                        <string>{{ site.bookmarkPath }}</string>
+                        <key>pageTitle</key>
+                        <string>{{ site.pageTitle }}</string>
+                    </dict>
+                    {% endfor %}
+                </array>
+            {% endif %}
+
+            <!-- Payload Information -->
+			<key>PayloadDescription</key>
+			<string></string>
+			<key>PayloadDisplayName</key>
+			<string>Parental Controls: Content Filter</string>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadIdentifier</key>
+			<string>2B079656-8B1F-4B80-8A12-FA8103DCEA9F</string>
+			<key>PayloadOrganization</key>
+			<string>{{ macos_profile__PayloadOrganization }}</string>
+			<key>PayloadType</key>
+			<string>com.apple.familycontrols.contentfilter</string>
+			<key>PayloadUUID</key>
+			<string>4EDFA29F-D8F8-49EC-BF54-75FF71185EB5</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+
+		<!-- Time limits -->
+		<dict>
+			<key>familyControlsEnabled</key>
+			<{{ macos_profile__familycontrols_familyControlsEnabled }}/>
+			<key>limits-list</key>
+			<array>
+				<dict>
+					<key>allowancesActive</key>
+					<true/>
+					<key>curfews</key>
+					<dict>
+						{% for day in macos_profile__familycontrols_curfews_days %}
+						<key>{{ day }}</key>
+						<array>
+							<dict>
+								<key>end</key>
+								<string>{{ macos_profile__familycontrols_curfews_deny_morning_end }}</string>
+								<key>start</key>
+								<string>{{ macos_profile__familycontrols_curfews_deny_morning_start }}</string>
+							</dict>
+							<dict>
+								<key>end</key>
+								<string>{{ macos_profile__familycontrols_curfews_deny_evening_end }}</string>
+								<key>start</key>
+								<string>{{ macos_profile__familycontrols_curfews_deny_evening_start }}</string>
+							</dict>
+						</array>
+						{% endfor %}
+					</dict>
+					<key>groupID</key>
+					<string>__COMPUTER__</string>
+					<key>itemType</key>
+					<string>com.apple.familycontrols.timelimits.computer</string>
+					<key>name</key>
+					<string>Computer</string>
+				</dict>
+			</array>
+
+            <!-- Payload Information -->
+			<key>PayloadDescription</key>
+			<string></string>
+			<key>PayloadDisplayName</key>
+			<string>Parental Controls: Time Limits</string>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadIdentifier</key>
+			<string>6B8463D4-4D9B-409F-8FD5-C28B7758D297</string>
+			<key>PayloadOrganization</key>
+			<string>{{ macos_profile__PayloadOrganization }}</string>
+			<key>PayloadType</key>
+			<string>com.apple.familycontrols.timelimits</string>
+			<key>PayloadUUID</key>
+			<string>11E068D4-3838-4340-918A-2A58283B26F5</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+
+
+		</dict>
+	</array>
+
+
+    <!-- Profile Description -->
+	<key>PayloadDescription</key>
+	<string>{{ macos_profile__familycontrols_PayloadDescription }}</string>
+	<key>PayloadDisplayName</key>
+	<string>{{ macos_profile__familycontrols_PayloadDisplayName }}</string>
+	<key>PayloadUUID</key>
+	<string>BF4AE8E1-5AA1-442F-A705-62A9EA3E04F8</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+	<key>PayloadOrganization</key>
+	<string>{{ macos_profile__PayloadOrganization }}</string>
+	<key>PayloadRemovalDisallowed</key>
+	<{{ macos_profile__PayloadRemovalDisallowed }}/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+
+
+</dict>
+</plist>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+
+
+<!-- Profile Payload Content -->
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadContent</key>
+            <dict>
+                <key>com.github.salopensource.sal</key>
+                <dict>
+                    <key>Forced</key>
+                    <array>
+                        <dict>
+                            <key>mcx_preference_settings</key>
+                            <dict>
+                                <key>BasicAuth</key>
+                                <{{ macos_profile__sal_BasicAuth }}/>
+                                <key>ServerURL</key>
+                                <string>{{ macos_profile__sal_ServerURL }}</string>
+                                <key>SkipFacts</key>
+                                <array/>
+                                <key>SyncScripts</key>
+                                <{{ macos_profile__sal_SyncScripts }}/>
+                            </dict>
+                        </dict>
+                    </array>
+                </dict>
+            </dict>
+
+            <!-- Payload Information -->
+			<key>PayloadDisplayName</key>
+			<string>Sal Client Settings</string>
+            <key>PayloadEnabled</key>
+            <true/>
+            <key>PayloadIdentifier</key>
+            <string>66D6D1AE-688E-40F8-B524-63E53E587084</string>
+            <key>PayloadType</key>
+            <string>com.apple.ManagedClient.preferences</string>
+            <key>PayloadUUID</key>
+            <string>B44D29F0-1A47-4C9B-8A02-F790AE11DEA8</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+
+        </dict>
+    </array>
+
+
+    <!-- Profile Description -->
+    <key>PayloadDescription</key>
+    <string>{{ macos_profile__sal_PayloadDescription }}</string>
+    <key>PayloadDisplayName</key>
+    <string>{{ macos_profile__sal_PayloadDisplayName }}</string>
+    <key>PayloadUUID</key>
+    <string>8F1C64D1-385D-464F-BAF1-C9274F3C2192</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+	<key>PayloadOrganization</key>
+	<string>{{ macos_profile__PayloadOrganization }}</string>
+	<key>PayloadRemovalDisallowed</key>
+	<{{ macos_profile__PayloadRemovalDisallowed }}/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+
+
+</dict>
+</plist>

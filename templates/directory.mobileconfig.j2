@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+
+    <!-- Profile Payload Content -->
+	<key>PayloadContent</key>
+	<array>
+
+        <!-- com.apple.DirectoryService.managed -->
+		<dict>
+			<key>ADAllowMultiDomainAuth</key>
+			<{{ macos_profile__directory_ADAllowMultiDomainAuth }}/>
+			<key>ADAllowMultiDomainAuthFlag</key>
+			<{{ macos_profile__directory_ADAllowMultiDomainAuthFlag }}/>
+			<key>ADCreateMobileAccountAtLogin</key>
+			<{{ macos_profile__directory_ADCreateMobileAccountAtLogin }}/>
+			<key>ADCreateMobileAccountAtLoginFlag</key>
+			<{{ macos_profile__directory_ADCreateMobileAccountAtLoginFlag }}/>
+			<key>ADDefaultUserShell</key>
+			<string>{{ macos_profile__directory_ADDefaultUserShell }}</string>
+			<key>ADDefaultUserShellFlag</key>
+			<{{ macos_profile__directory_ADDefaultUserShellFlag }}/>
+			<key>ADDomainAdminGroupList</key>
+			<array>
+			{% for admin in macos_profile__directory_ADDomainAdminGroupList %}
+                <string>{{ admin }}</string>
+			{% endfor %} </array>
+			<key>ADDomainAdminGroupListFlag</key>
+			<{{ macos_profile__directory_ADDomainAdminGroupListFlag }}/>
+			<key>ADForceHomeLocal</key>
+			<{{ macos_profile__directory_ADForceHomeLocal }}/>
+			<key>ADForceHomeLocalFlag</key>
+			<{{ macos_profile__directory_ADForceHomeLocalFlag }}/>
+			<key>ADMapGGIDAttribute</key>
+			<string>{{ macos_profile__directory_ADMapGGIDAttribute }}</string>
+			<key>ADMapGGIDAttributeFlag</key>
+			<{{ macos_profile__directory_ADMapGGIDAttributeFlag }}/>
+			<key>ADMapGIDAttribute</key>
+			<string>{{ macos_profile__directory_ADMapGIDAttribute }}</string>
+			<key>ADMapGIDAttributeFlag</key>
+			<{{ macos_profile__directory_ADMapGIDAttributeFlag }}/>
+			<key>ADMapUIDAttribute</key>
+			<string>{{ macos_profile__directory_ADMapUIDAttribute }}</string>
+			<key>ADMapUIDAttributeFlag</key>
+			<{{ macos_profile__directory_ADMapUIDAttributeFlag }}/>
+			<key>ADMountStyle</key>
+			<string>{{ macos_profile__directory_ADMountStyle }}</string>
+			<key>ADNamespace</key>
+			<string>{{ macos_profile__directory_ADNamespace }}</string>
+			<key>ADNamespaceFlag</key>
+			<{{ macos_profile__directory_ADNamespaceFlag }}/>
+			<key>ADOrganizationalUnit</key>
+			<string>{{ macos_profile__directory_ADOrganizationalUnit }}</string>
+			<key>ADPacketEncrypt</key>
+			<string>{{ macos_profile__directory_ADPacketEncrypt }}</string>
+			<key>ADPacketEncryptFlag</key>
+			<{{ macos_profile__directory_ADPacketEncryptFlag }}/>
+			<key>ADPacketSign</key>
+			<string>{{ macos_profile__directory_ADPacketSign }}</string>
+			<key>ADPacketSignFlag</key>
+			<{{ macos_profile__directory_ADPacketSignFlag }}/>
+			<key>ADTrustChangePassIntervalDays</key>
+			<integer>{{ macos_profile__directory_ADTrustChangePassIntervalDays }}</integer>
+			<key>ADTrustChangePassIntervalDaysFlag</key>
+			<{{ macos_profile__directory_ADTrustChangePassIntervalDaysFlag }}/>
+			<key>ADUseWindowsUNCPath</key>
+			<{{ macos_profile__directory_ADUseWindowsUNCPath }}/>
+			<key>ADUseWindowsUNCPathFlag</key>
+			<{{ macos_profile__directory_ADUseWindowsUNCPathFlag }}/>
+			<key>ADWarnUserBeforeCreatingMAFlag</key>
+			<{{ macos_profile__directory_ADWarnUserBeforeCreatingMAFlag }}/>
+			<key>ClientID</key>
+			<string>{{ macos_profile__directory_ClientID }}</string>
+			<key>HostName</key>
+			<string>{{ macos_profile__directory_HostName }}</string>
+			<key>UserName</key>
+			<string>{{ macos_profile__directory_UserName }}</string>
+			<key>Password</key>
+			<string>{{ macos_profile__directory_Password }}</string>
+
+            <!-- Payload Information -->
+			<key>PayloadDescription</key>
+			<string></string>
+			<key>PayloadDisplayName</key>
+			<string>Directory (Directory)</string>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadIdentifier</key>
+			<string>DA91E946-FA17-411F-82B0-F1D3E45515F3</string>
+			<key>PayloadOrganization</key>
+			<string>{{ macos_profile__PayloadOrganization }}</string>
+			<key>PayloadType</key>
+			<string>com.apple.DirectoryService.managed</string>
+			<key>PayloadUUID</key>
+			<string>99422837-D6FF-466E-83E0-1BFE2C337A7C</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+
+
+		</dict>
+	</array>
+
+
+    <!-- Profile Description -->
+	<key>PayloadDescription</key>
+	<string>{{ macos_profile__directory_PayloadDescription }}</string>
+	<key>PayloadDisplayName</key>
+	<string>{{ macos_profile__directory_PayloadDisplayName }}</string>
+	<key>PayloadUUID</key>
+	<string>36DFD4E5-213C-4708-B1F3-96F566E0F01A</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+	<key>PayloadOrganization</key>
+	<string>{{ macos_profile__PayloadOrganization }}</string>
+	<key>PayloadRemovalDisallowed</key>
+	<{{ macos_profile__PayloadRemovalDisallowed }}/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+
+
+</dict>
+</plist>

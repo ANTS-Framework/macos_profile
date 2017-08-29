@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+
+    <!-- Profile Payload Content -->
+	<key>PayloadContent</key>
+	<array>
+
+        <!-- com.apple.dock -->
+		<dict>
+            {% if macos_profile__dock_manage_MCXDockSpecialFolders %}
+			<key>MCXDockSpecialFolders</key>
+			<array>
+                {% for item in macos_profile__dock_MCXDockSpecialFolders %}
+				<string>{{ item }}</string>
+                {% endfor %}
+			</array>
+            {% endif %}
+			<key>autohide</key>
+			<{{ macos_profile__dock_autohide }}/>
+			<key>contents-immutable</key>
+			<{{ macos_profile__dock_contents_immutable }}/>
+			<key>largesize</key>
+			<integer>{{ macos_profile__dock_largesize }}</integer>
+			<key>launchanim</key>
+			<{{ macos_profile__dock_launchanim }}/>
+			<key>launchanim-immutable</key>
+			<{{ macos_profile__dock_launchanim_immutable }}/>
+			<key>magnification</key>
+			<{{ macos_profile__dock_magnification }}/>
+			<key>magnify-immutable</key>
+			<{{ macos_profile__dock_magnify_immutable }}/>
+			<key>magsize-immutable</key>
+			<{{ macos_profile__dock_magsize_immutable }}/>
+			<key>mineffect</key>
+			<string>{{ macos_profile__dock_mineffect }}</string>
+			<key>mineffect-immutable</key>
+			<{{ macos_profile__dock_mineffect_immutable }}/>
+			<key>minimize-to-application</key>
+			<{{ macos_profile__dock_minimize_to_application }}/>
+			<key>minimize-to-application-immutable</key>
+			<{{ macos_profile__dock_minimize_to_application_immutable }}/>
+			<key>orientation</key>
+			<string>{{ macos_profile__dock_orientation }}</string>
+			<key>position-immutable</key>
+			<{{ macos_profile__dock_position_immutable }}/>
+			<key>show-process-indicators</key>
+			<{{ macos_profile__dock_show_process_indicators }}/>
+			<key>show-process-indicators-immutable</key>
+			<{{ macos_profile__dock_show_process_indicators_immutable }}/>
+			<key>size-immutable</key>
+			<{{ macos_profile__dock_size_immutable }}/>
+			<key>static-apps</key>
+			<array>
+				{% for item in macos_profile__dock_static_apps %}
+				<dict>
+					<key>mcx_typehint</key>
+					<integer>1</integer>
+					<key>tile-data</key>
+					<dict>
+						<key>file-data</key>
+						<dict>
+							<key>_CFURLString</key>
+							<string>{{ item._CFURLString }}</string>
+							<key>_CFURLStringType</key>
+							<integer>{{ item._CFURLStringType }}</integer>
+						</dict>
+						<key>file-label</key>
+						<string>{{ item.file_label }}</string>
+					</dict>
+					<key>tile-type</key>
+					<string>file-tile</string>
+				</dict>
+				{% endfor %}
+			</array>
+			<key>static-only</key>
+			<{{ macos_profile__dock_static_only }}/>
+			<key>static-others</key>
+			<array/>
+			<key>tilesize</key>
+			<integer>{{ macos_profile__dock_tilesize }}</integer>
+
+            <!-- Payload Information -->
+			<key>PayloadDescription</key>
+			<string></string>
+			<key>PayloadDisplayName</key>
+			<string>{{ macos_profile__dock_PayloadDisplayName }}</string>
+			<key>PayloadEnabled</key>
+			<{{ macos_profile__dock_PayloadEnabled }}/>
+			<key>PayloadIdentifier</key>
+			<string>130F2B81-7B03-4211-A304-33F32ED67EC3</string>
+			<key>PayloadOrganization</key>
+			<string>{{ macos_profile__PayloadOrganization }}</string>
+			<key>PayloadType</key>
+			<string>com.apple.dock</string>
+			<key>PayloadUUID</key>
+			<string>B1BA76FC-527A-4650-BF9D-511860EC39BC</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+
+
+    <!-- Profile Description -->
+	<key>PayloadDescription</key>
+	<string>{{ macos_profile__dock_PayloadDescription }}</string>
+	<key>PayloadDisplayName</key>
+	<string>{{ macos_profile__dock_PayloadDisplayName }}</string>
+	<key>PayloadUUID</key>
+	<string>03CE16D7-6D95-4364-AA61-612054B9CBD3</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+	<key>PayloadOrganization</key>
+	<string>{{ macos_profile__PayloadOrganization }}</string>
+	<key>PayloadRemovalDisallowed</key>
+	<{{ macos_profile__PayloadRemovalDisallowed }}/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+
+
+</dict>
+</plist>

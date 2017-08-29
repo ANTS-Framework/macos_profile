@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+
+<!--
+MIT License
+
+Copyright (c) 2013-2017 Greg Neagle and Rich Trouton
+Modifications copyright 2017 IT Services University Basel
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+
+<dict>
+
+
+    <!-- Profile Payload Content -->
+	<key>PayloadContent</key>
+	<array>
+
+        <!-- Setup Assistant -->
+		<dict>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.SetupAssistant</key>
+				<dict>
+					<key>Set-Once</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>DidSeeSiriSetup</key>
+								<{{ macos_profile__skipsetup_SkipSiriSetup }}/>
+								<key>DidSeeiCloudLoginForStorageServices</key>
+								<{{ macos_profile__skipsetup_SkipiCloudLoginForStorageServices }}/>
+								<key>DidSeeCloudSetup</key>
+								<{{ macos_profile__skipsetup_SkipCloudSetup }}/>
+								<key>DidSeeSyncSetup</key>
+								<{{ macos_profile__skipsetup_SkipSyncSetup }}/>
+								<key>DidSeeSyncSetup2</key>
+								<{{ macos_profile__skipsetup_SkipSyncSetup2 }}/>
+								<key>DidSeeAvatarSetup</key>
+								<{{ macos_profile__skipsetup_SkipAvatarSetup }}/>
+								<key>DidSeeTouchIDSetup</key>
+								<{{ macos_profile__skipsetup_SkipTouchIDSetup }}/>
+								<key>DidSeeApplePaySetup</key>
+								<{{ macos_profile__skipsetup_SkipApplePaySetup }}/>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+
+
+            <!-- Payload Information -->
+			<key>PayloadDescription</key>
+			<string></string>
+			<key>PayloadDisplayName</key>
+			<string>Setup Assistant Settings</string>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadIdentifier</key>
+			<string>B7510062-37BF-40F2-977F-C52F17BE1456</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>DBDA0BC8-7062-4B85-B8EE-4969F68C5896</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+
+		{% if macos_profile__skipsetup_SkipCloudSetup == "true"%}
+        <!-- Manage iCloud Setup -->
+		<dict>
+			<key>SkipCloudSetup</key>
+			<true/>
+
+            <!-- Payload Information -->
+			<key>PayloadType</key>
+			<string>com.apple.SetupAssistant.managed</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>B7A90E92-F828-4183-9884-16407FC6EE02</string>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadUUID</key>
+			<string>96BB99B2-41D8-4DA7-AB42-59D82C6FF446</string>
+			<key>PayloadDisplayName</key>
+			<string>{{ macos_profile__skipsetup_PayloadDisplayName }}</string>
+		</dict>
+		{% endif %}
+
+		{% if macos_profile__skipsetup_DisableAppleDiagonstics == "true" %}
+        <!-- Manage Apple Diagnostics Setup -->
+		<dict>
+				<key>AutoSubmit</key>
+				<false/>
+
+                <!-- Payload Information -->
+				<key>PayloadType</key>
+				<string>com.apple.SubmitDiagInfo</string>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+				<key>PayloadIdentifier</key>
+				<string>2FF87E59-88D4-4542-95FC-45FEADFD0A6E</string>
+				<key>PayloadEnabled</key>
+				<true/>
+				<key>PayloadUUID</key>
+				<string>49FDC930-4D65-484C-A6CB-479535575358</string>
+				<key>PayloadDisplayName</key>
+				<string>{{ macos_profile__skipsetup_PayloadDisplayNameDiagnostics }}</string>
+			</dict>
+		{% endif %}
+
+	</array>
+
+
+    <!-- Profile Description -->
+	<key>PayloadDescription</key>
+	<string>{{ macos_profile__skipsetup_PayloadDescription }}</string>
+	<key>PayloadDisplayName</key>
+	<string>{{ macos_profile__skipsetup_PayloadDisplayName }}</string>
+	<key>PayloadUUID</key>
+	<string>2D6ECE75-7F3F-4D68-A57D-52C31267E4D3</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+	<key>PayloadOrganization</key>
+	<string>{{ macos_profile__PayloadOrganization }}</string>
+	<key>PayloadRemovalDisallowed</key>
+	<{{ macos_profile__PayloadRemovalDisallowed }}/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+
+
+</dict>
+</plist>

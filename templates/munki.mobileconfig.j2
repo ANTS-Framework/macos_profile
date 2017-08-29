@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+
+    <!-- Profile Payload Content -->
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadContent</key>
+            <dict>
+				<key>ManagedInstalls</key>
+				<dict>
+					<key>Forced</key>
+					<array>
+						<dict>
+							<key>mcx_preference_settings</key>
+							<dict>
+								<key>AppleSoftwareUpdatesOnly</key>
+                                <{{ macos_profile__munki_AppleSoftwareUpdatesOnly }}/>
+								<key>ClientIdentifier</key>
+                                <string>{{ macos_profile__munki_ClientIdentifier }}</string>
+								<key>ClientResourcesFilename</key>
+                                <string>{{ macos_profile__munki_ClientResourcesFilename }}</string>
+								<key>DaysBetweenNotifications</key>
+                                <integer>{{ macos_profile__munki_DaysBetweenNotifications }}</integer>
+								<key>FollowHTTPRedirects</key>
+                                <string>{{ macos_profile__munki_FollowHTTPRedirects }}</string>
+								<key>InstallAppleSoftwareUpdates</key>
+                                <{{ macos_profile__munki_InstallAppleSoftwareUpdates }}/>
+								<key>LocalOnlyManifest</key>
+                                <string>{{ macos_profile__munki_LocalOnlyManifest }}</string>
+								<key>LogFile</key>
+                                <string>{{ macos_profile__munki_LogFile }}</string>
+								<key>LogToSyslog</key>
+                                <{{ macos_profile__munki_LogToSyslog }}/>
+								<key>LoggingLevel</key>
+                                <integer>{{ macos_profile__munki_LoggingLevel }}</integer>
+								<key>ManagedInstallDir</key>
+                                <string>{{ macos_profile__munki_ManagedInstallDir }}</string>
+								<key>ManifestURL</key>
+                                <string>{{ macos_profile__munki_ManifestURL }}</string>
+								<key>PackageVerificationMode</key>
+                                <string>{{ macos_profile__munki_PackageVerificationMode }}</string>
+								<key>PerformAuthRestarts</key>
+                                <{{ macos_profile__munki_PerformAuthRestarts }}/>
+								<key>SoftwareRepoURL</key>
+                                <string>{{ macos_profile__munki_SoftwareRepoURL }}</string>
+								<key>SuppressAutoInstall</key>
+                                <{{ macos_profile__munki_SuppressAutoInstall }}/>
+								<key>SuppressStopButtonOnInstall</key>
+                                <{{ macos_profile__munki_SuppressStopButtonOnInstall }}/>
+								<key>SuppressUserNotification</key>
+                                <{{ macos_profile__munki_SuppressUserNotification }}/>
+								<key>UnattendedAppleUpdates</key>
+                                <{{ macos_profile__munki_UnattendedAppleUpdates }}/>
+								<key>UseClientCertificate</key>
+                                <integer>{{ macos_profile__munki_UseClientCertificate }}</integer>
+							</dict>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+
+            <!-- Payload Information -->
+			<key>PayloadDisplayName</key>
+			<string>Munki Client Settings</string>
+            <key>PayloadEnabled</key>
+            <true/>
+            <key>PayloadIdentifier</key>
+            <string>699B2A50-DDA5-4C68-9800-259B75014F70</string>
+            <key>PayloadType</key>
+            <string>com.apple.ManagedClient.preferences</string>
+            <key>PayloadUUID</key>
+            <string>D473B409-F279-4234-B96C-19A9E8B0FFCB</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+
+        </dict>
+    </array>
+
+
+    <!-- Profile Description -->
+    <key>PayloadDescription</key>
+    <string>{{ macos_profile__munki_PayloadDescription }}</string>
+    <key>PayloadDisplayName</key>
+    <string>{{ macos_profile__munki_PayloadDisplayName }}</string>
+    <key>PayloadUUID</key>
+    <string>B0B9D7ED-7386-48DD-B281-D40BA78C8777</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+	<key>PayloadOrganization</key>
+	<string>{{ macos_profile__PayloadOrganization }}</string>
+	<key>PayloadRemovalDisallowed</key>
+	<{{ macos_profile__PayloadRemovalDisallowed }}/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+
+
+</dict>
+</plist>

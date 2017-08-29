@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+
+    <!-- Profile Payload Content -->
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+
+            <!-- com.apple.finder -->
+			<key>InterfaceLevel</key>
+			<string>{{ macos_profile__finder_InterfaceLevel }}</string>
+			<key>ProhibitBurn</key>
+			<{{ macos_profile__finder_ProhibitBurn }}/>
+			<key>ProhibitConnectTo</key>
+			<{{ macos_profile__finder_ProhibitConnectTo }}/>
+			<key>ProhibitEject</key>
+			<{{ macos_profile__finder_ProhibitEject }}/>
+			<key>ProhibitGoToFolder</key>
+			<{{ macos_profile__finder_ProhibitGoToFolder }}/>
+			<key>ShowExternalHardDrivesOnDesktop</key>
+			<{{ macos_profile__finder_ShowExternalHardDrivesOnDesktop }}/>
+			<key>ShowHardDrivesOnDesktop</key>
+			<{{ macos_profile__finder_ShowHardDrivesOnDesktop }}/>
+			<key>ShowMountedServersOnDesktop</key>
+			<{{ macos_profile__finder_ShowMountedServersOnDesktop }}/>
+			<key>ShowRemovableMediaOnDesktop</key>
+			<{{ macos_profile__finder_ShowRemovableMediaOnDesktop }}/>
+			<key>WarnOnEmptyTrash</key>
+			<{{ macos_profile__finder_WarnOnEmptyTrash }}/>
+
+            <!-- Payload Information -->
+			<key>PayloadDescription</key>
+			<string></string>
+			<key>PayloadDisplayName</key>
+			<string>Media Access:  Finder Settings</string>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadIdentifier</key>
+			<string>98B0D6D3-CB83-4298-AD79-504E0430E37C</string>
+			<key>PayloadOrganization</key>
+			<string>{{ macos_profile__PayloadOrganization }}</string>
+			<key>PayloadType</key>
+			<string>com.apple.finder</string>
+			<key>PayloadUUID</key>
+			<string>5F30BD79-5658-4D98-915E-B7A6EB64F4EC</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+
+
+		</dict>
+	</array>
+
+
+    <!-- Profile Description -->
+	<key>PayloadDescription</key>
+	<string>{{ macos_profile__finder_PayloadDescription }}</string>
+	<key>PayloadDisplayName</key>
+	<string>{{ macos_profile__finder_PayloadDisplayName }}</string>
+	<key>PayloadUUID</key>
+	<string>E43AEC69-1D2F-42F3-A5CD-E5D7EE79985A</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+	<key>PayloadOrganization</key>
+	<string>{{ macos_profile__PayloadOrganization }}</string>
+	<key>PayloadRemovalDisallowed</key>
+	<{{ macos_profile__PayloadRemovalDisallowed }}/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+
+
+</dict>
+</plist>

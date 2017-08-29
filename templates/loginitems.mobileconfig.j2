@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+
+    <!-- Profile Payload Content -->
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+
+            <!-- com.apple.loginitems.managed -->
+			<key>AutoLaunchedApplicationDictionary-managed</key>
+			<array>
+			{% if macos_profile__loginitems_apps_enabled %}
+                {% for item in macos_profile__loginitems_apps %}
+                    <dict>
+                        <key>Hide</key>
+                        <{{ item.hide }}/>
+                        <key>Path</key>
+                        <string>{{ item.path }}</string>
+                    </dict>
+                {% endfor %}
+			{% endif %}
+            
+			{% if macos_profile__loginitems_network_mounts is defined %}
+                {% for item in macos_profile__loginitems_network_mounts %}
+                    <dict>
+                        <key>AuthenticateAsLoginUserShortName</key>
+                        <false/>
+                        <key>Hide</key>
+                        <{{ item.hide }}/>
+                        <key>URL</key>
+                        <string>{{ item.url }}</string>
+                    </dict>
+                {% endfor %}
+			{% endif %}
+            
+			{% if macos_profile__loginitems_items is defined %}
+                {% for item in macos_profile__loginitems_items %}
+                    <dict>
+                        <key>Hide</key>
+                        <{{ item.hide }}/>
+                        <key>Path</key>
+                        <string>{{ item.path }}</string>
+                    </dict>
+                {% endfor %}
+			{% endif %}
+			</array>
+
+            <!-- Payload Information -->
+			<key>PayloadDescription</key>
+			<string></string>
+			<key>PayloadDisplayName</key>
+			<string>Login Items:  Managed Items</string>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadIdentifier</key>
+			<string>179B955B-73A5-49CF-A1D5-EA8C73C469B8</string>
+			<key>PayloadOrganization</key>
+			<string>{{ macos_profile__PayloadOrganization }}</string>
+			<key>PayloadType</key>
+			<string>com.apple.loginitems.managed</string>
+			<key>PayloadUUID</key>
+			<string>C1FD1831-4010-4DC4-84BF-32F228E52692</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+
+		</dict>
+	</array>
+
+
+    <!-- Profile Description -->
+	<key>PayloadDescription</key>
+	<string>{{ macos_profile__loginitems_PayloadDescription }}</string>
+	<key>PayloadDisplayName</key>
+	<string>{{ macos_profile__loginitems_PayloadDisplayName }}</string>
+	<key>PayloadUUID</key>
+	<string>F0E51DA4-F652-42D7-9D66-3EBABFCBE93E</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+	<key>PayloadOrganization</key>
+	<string>{{ macos_profile__PayloadOrganization }}</string>
+	<key>PayloadRemovalDisallowed</key>
+	<{{ macos_profile__PayloadRemovalDisallowed }}/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+
+
+</dict>
+</plist>

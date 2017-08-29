@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+
+    <!-- Profile Payload Content -->
+	<key>PayloadContent</key>
+	<array>
+
+        <!-- com.apple.applicationaccess.new -->
+		<dict>
+			<key>familyControlsEnabled</key>
+			<true/>
+			<key>pathWhiteList</key>
+			<array>
+			{% for app in macos_profile__applicationaccess_new_whiteList %}
+					<string>{{ app.path }}</string>
+			{% endfor %}
+			</array>
+
+            <!-- Payload Information -->
+			<key>PayloadDescription</key>
+			<string></string>
+			<key>PayloadDisplayName</key>
+			<string>Application Restrictions</string>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadIdentifier</key>
+			<string>466C5D17-C7EB-40D7-A73B-B8C649D58F40</string>
+			<key>PayloadOrganization</key>
+			<string>{{ macos_profile__PayloadOrganization }}</string>
+			<key>PayloadType</key>
+			<string>com.apple.applicationaccess.new</string>
+			<key>PayloadUUID</key>
+			<string>161280B2-03E2-4CBF-A2CA-866BC3E38C44</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+
+
+		</dict>
+	</array>
+
+
+    <!-- Profile Description -->
+	<key>PayloadDescription</key>
+	<string>{{ macos_profile__applicationaccess_new_PayloadDescription }}</string>
+	<key>PayloadDisplayName</key>
+	<string>{{ macos_profile__applicationaccess_new_PayloadDisplayName }}</string>
+	<key>PayloadUUID</key>
+	<string>DF48E6A7-C85E-4DD9-B501-0AFBCF55FE6C</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+	<key>PayloadOrganization</key>
+	<string>{{ macos_profile__PayloadOrganization }}</string>
+	<key>PayloadRemovalDisallowed</key>
+	<{{ macos_profile__PayloadRemovalDisallowed }}/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+
+
+</dict>
+</plist>

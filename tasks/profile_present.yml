@@ -1,0 +1,22 @@
+---
+
+- name: Make sure directory exists
+  file:
+    path: "{{ macos_profile__destinationFolder }}"
+    owner: root
+    group: wheel
+    state: directory
+
+- name: Copy profile file to local machine
+  template:
+    src: "{{ mobileconfig.template }}.mobileconfig.j2"
+    dest: "{{ macos_profile__destinationFolder }}/{{ macos_profile__profile }}"
+    owner: root
+    group: wheel
+    mode: 0400
+    validate: '/usr/bin/plutil -lint %s'
+  register: movedprofile
+
+- name: "Install profile {{ macos_profile__profile }}"
+  command: /usr/bin/profiles -IF "{{ macos_profile__destinationFolder }}/{{ macos_profile__profile }}"
+  when: movedprofile.changed or installedprofile.rc == 1

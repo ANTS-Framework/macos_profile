@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+
+    <!-- Profile Payload Content -->
+	<key>PayloadContent</key>
+	<array>
+
+        <!--  com.apple.SubmitDiagInfo -->
+		<dict>
+			<key>AutoSubmit</key>
+			<{{ macos_profile__applicationaccess_AutoSubmit }}/>
+
+            <!-- Payload Information -->
+			<key>PayloadDescription</key>
+			<string></string>
+			<key>PayloadDisplayName</key>
+			<string>Security And Privacy</string>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadIdentifier</key>
+			<string>0F127985-BE74-49CD-8846-9854FA85EB9A</string>
+			<key>PayloadOrganization</key>
+			<string>{{ macos_profile__PayloadOrganization }}</string>
+			<key>PayloadType</key>
+			<string>com.apple.SubmitDiagInfo</string>
+			<key>PayloadUUID</key>
+			<string>06625598-9B50-4EAD-B893-A2469777CFAE</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+
+        <!-- com.apple.applicationaccess -->
+		<dict>
+			<key>allowCloudDocumentSync</key>
+			<{{ macos_profile__applicationaccess_allowCloudDocumentSync }}/>
+			<key>allowDiagnosticSubmission</key>
+			<{{ macos_profile__applicationaccess_allowDiagnosticSubmission }}/>
+			<key>allowSpotlightInternetResults</key>
+			<{{ macos_profile__applicationaccess_allowSpotlightInternetResults }}/>
+			<key>allowDiagnosticSubmission</key>
+			<false/>
+
+            <!-- Payload Information -->
+			<key>PayloadDescription</key>
+			<string></string>
+			<key>PayloadDisplayName</key>
+			<string>Restrictions</string>
+			<key>PayloadEnabled</key>
+			<true/>
+			<key>PayloadIdentifier</key>
+			<string>DDAD37D0-1DC7-4C06-A38E-93825E65AE61</string>
+			<key>PayloadOrganization</key>
+			<string>{{ macos_profile__PayloadOrganization }}</string>
+			<key>PayloadType</key>
+			<string>com.apple.applicationaccess</string>
+			<key>PayloadUUID</key>
+			<string>E0952DAA-63F8-4D5A-BE8D-3B4C67ED1CCC</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+
+
+		</dict>
+	</array>
+
+
+    <!-- Profile Description -->
+	<key>PayloadDescription</key>
+	<string>{{ macos_profile__applicationaccess_PayloadDescription }}</string>
+	<key>PayloadDisplayName</key>
+	<string>{{ macos_profile__applicationaccess_PayloadDisplayName }}</string>
+	<key>PayloadUUID</key>
+	<string>B8FE79AF-D95D-49BB-9D3D-0FB2950504DF</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+	<key>PayloadOrganization</key>
+	<string>{{ macos_profile__PayloadOrganization }}</string>
+	<key>PayloadRemovalDisallowed</key>
+	<{{ macos_profile__PayloadRemovalDisallowed }}/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+
+
+</dict>
+</plist>

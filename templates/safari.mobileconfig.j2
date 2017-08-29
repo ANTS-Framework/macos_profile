@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+
+<!--
+MIT License
+
+Copyright (c) 2013-2017 Nick McSpadden
+Modifications copyright 2017 IT Services University Basel
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+
+<dict>
+
+
+    <!-- Profile Payload Content -->
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadContent</key>
+            <dict>
+                <key>com.apple.Safari</key>
+                <dict>
+                    <key>Forced</key>
+                    <array>
+                        <dict>
+                            <key>mcx_preference_settings</key>
+                            <dict>
+                                <key>HomePage</key>
+                                <string>{{ macos_profile__safari_HomePage }}</string>
+                                <key>NewWindowBehavior</key>
+                                <integer>{{ macos_profile__safari_NewWindowBehavior }}</integer>
+                                <key>ShowFavoritesBar</key>
+                                <{{ macos_profile__safari_ShowFavoritesBar }}/>
+                                <key>AutoFillCreditCardData</key>
+                                <{{ macos_profile__safari_AutoFillCreditCardData }}/>
+                                <key>NewTabBehavior</key>
+                                <integer>{{ macos_profile__safari_NewTabBehavior }}</integer>
+                                <key>AutoFillPasswords</key>
+                                <{{ macos_profile__safari_AutoFillPasswords }}/>
+                                <key>AutoFillMiscellaneousForms</key>
+                                <{{ macos_profile__safari_AutoFillMiscellaneousForms }}/>
+                                <key>AutoFillFromAddressBook</key>
+                                <{{ macos_profile__safari_AutoFillFromAddressBook }}/>
+                                <key>DownloadsPath</key>
+                                <string>{{ macos_profile__safari_DownloadsPath }}</string>
+                                <key>DownloadsClearingPolicy</key>
+                                <integer>{{ macos_profile__safari_DownloadsClearingPolicy }}</integer>
+                                <key>AlwaysShowTabBar</key>
+                                <{{ macos_profile__safari_AlwaysShowTabBar }}/>
+                                <key>LastSafariVersionWithWelcomePage</key>
+                                <string>{{ macos_profile__safari_LastSafariVersionWithWelcomePage }}</string>
+                                <key>SidebarViewModeIdentifier</key>
+                                <string>{{ macos_profile__safari_SidebarViewModeIdentifier }}</string>
+                                <key>ShowSidebarInNewWindows</key>
+                                <integer>{{ macos_profile__safari_ShowSidebarInNewWindows }}</integer>
+                                <key>LSUIPresentationMode</key>
+                                <integer>4</integer>
+                            </dict>
+                        </dict>
+                    </array>
+                </dict>
+            </dict>
+
+            <!-- Payload Information -->
+            <key>PayloadDescription</key>
+            <string></string>
+            <key>PayloadDisplayName</key>
+            <string>Custom</string>
+            <key>PayloadEnabled</key>
+            <true/>
+            <key>PayloadIdentifier</key>
+            <string>739D1BDB-24BB-4CA7-979A-0212ABED600F</string>
+            <key>PayloadOrganization</key>
+            <string>{{ macos_profile__PayloadOrganization }}</string>
+            <key>PayloadType</key>
+            <string>com.apple.ManagedClient.preferences</string>
+            <key>PayloadUUID</key>
+            <string>402F9169-74F5-4998-8727-8D1CE9FD0939</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+
+        </dict>
+    </array>
+
+
+    <!-- Profile Description -->
+    <key>PayloadDescription</key>
+    <string>{{ macos_profile__safari_PayloadDescription }}</string>
+    <key>PayloadDisplayName</key>
+    <string>{{ macos_profile__safari_PayloadDisplayName }}</string>
+    <key>PayloadUUID</key>
+    <string>A98E2EC2-7433-4956-9807-949B5E62373C</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+    <key>PayloadEnabled</key>
+    <true/>
+    <key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+    <key>PayloadOrganization</key>
+    <string>{{ macos_profile__PayloadOrganization }}</string>
+    <key>PayloadRemovalDisallowed</key>
+    <{{ macos_profile__PayloadRemovalDisallowed }}/>
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+
+
+</dict>
+</plist>

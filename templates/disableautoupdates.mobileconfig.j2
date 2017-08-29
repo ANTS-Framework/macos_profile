@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+
+<!--
+Copyright 2013-2017 Greg Neagle
+Modifications copyright 2017 IT Services University Basel
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+    <dict>
+
+
+        <!-- Profile Payload Content -->
+        <key>PayloadContent</key>
+        <array>
+
+
+            {% if macos_profile__disableautoupdates_adium %}
+            <dict>
+                <key>PayloadContent</key>
+                <dict>
+                    <key>com.adiumX.adiumX</key>
+                    <dict>
+                        <key>Set-Once</key>
+                        <array>
+                            <dict>
+                                <key>mcx_preference_settings</key>
+                                <dict>
+                                    <key>SUEnableAutomaticChecks</key>
+                                    <false/>
+                                    <key>SUHasLaunchedBefore</key>
+                                    <true/>
+                                </dict>
+                            </dict>
+                        </array>
+                    </dict>
+                </dict>
+                <key>PayloadDisplayName</key>
+                <string>Adium</string>
+                <key>PayloadEnabled</key>
+                <true/>
+                <key>PayloadIdentifier</key>
+                <string>5B6E16FD-1694-4F2A-BD6B-BED404DAF2C7</string>
+                <key>PayloadType</key>
+                <string>com.apple.ManagedClient.preferences</string>
+                <key>PayloadUUID</key>
+                <string>D079911A-0BE1-4E23-BC71-DDFF949B3C4B</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+            </dict>
+            {% endif %}
+
+
+            {% if macos_profile__disableautoupdates_itunes %}
+            <dict>
+                <key>PayloadContent</key>
+                <dict>
+                    <key>com.apple.iTunes</key>
+                    <dict>
+                        <key>Set-Once</key>
+                        <array>
+                            <dict>
+                                <key>mcx_preference_settings</key>
+                                <dict>
+                                    <key>disableCheckForUpdates</key>
+                                    <true/>
+                                </dict>
+                            </dict>
+                        </array>
+                    </dict>
+                </dict>
+                <key>PayloadDisplayName</key>
+                <string>iTunes</string>
+                <key>PayloadEnabled</key>
+                <true/>
+                <key>PayloadIdentifier</key>
+                <string>3DF80BEC-77B7-4326-BF85-4CDD5D3EA502</string>
+                <key>PayloadType</key>
+                <string>com.apple.ManagedClient.preferences</string>
+                <key>PayloadUUID</key>
+                <string>CA431E61-8324-4B1A-8367-A853DA36398A</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+            </dict>
+            {% endif %}
+
+
+            {% if macos_profile__disableautoupdates_office2016 %}
+            <dict>
+                <key>PayloadContent</key>
+                <dict>
+                    <key>com.microsoft.autoupdate2</key>
+                    <dict>
+                        <key>Set-Once</key>
+                        <array>
+                            <dict>
+                                <key>mcx_preference_settings</key>
+                                <dict>
+                                    <key>HowToCheck</key>
+                                    <string>Manual</string>
+                                    <key>LastUpdate</key>
+                                    <date>2222-01-01T00:00:00Z</date>
+                                </dict>
+                            </dict>
+                        </array>
+                    </dict>
+                </dict>
+                <key>PayloadDisplayName</key>
+                <string>Micrsoft Auto Update</string>
+                <key>PayloadEnabled</key>
+                <true/>
+                <key>PayloadIdentifier</key>
+                <string>12A70D65-F367-43EC-B4F6-EE9683B1587D</string>
+                <key>PayloadType</key>
+                <string>com.apple.ManagedClient.preferences</string>
+                <key>PayloadUUID</key>
+                <string>59C03423-8C8E-445B-8037-E8ED726ACD13</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+            </dict>
+            {% endif %}
+
+
+            {% if macos_profile__disableautoupdates_sublime2 %}
+            <dict>
+                <key>PayloadContent</key>
+                <dict>
+                    <key>com.sublimetext.2</key>
+                    <dict>
+                        <key>Set-Once</key>
+                        <array>
+                            <dict>
+                                <key>mcx_preference_settings</key>
+                                <dict>
+                                    <key>SUEnableAutomaticChecks</key>
+                                    <false/>
+                                </dict>
+                            </dict>
+                        </array>
+                    </dict>
+                </dict>
+                <key>PayloadDisplayName</key>
+                <string>Sublime</string>
+                <key>PayloadEnabled</key>
+                <true/>
+                <key>PayloadIdentifier</key>
+                <string>AA007B70-74EC-42E2-9D2A-BF326F36A706</string>
+                <key>PayloadType</key>
+                <string>com.apple.ManagedClient.preferences</string>
+                <key>PayloadUUID</key>
+                <string>3706F8C8-6CFD-42DE-B303-A6B96F9DF0E7</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+            </dict>
+            {% endif %}
+
+
+            {% if macos_profile__disableautoupdates_vlc %}
+            <dict>
+                <key>PayloadContent</key>
+                <dict>
+                    <key>org.videolan.vlc</key>
+                    <dict>
+                        <key>Set-Once</key>
+                        <array>
+                            <dict>
+                                <key>mcx_preference_settings</key>
+                                <dict>
+                                    <key>SUEnableAutomaticChecks</key>
+                                    <false/>
+                                    <key>SUHasLaunchedBefore</key>
+                                    <true/>
+                                </dict>
+                            </dict>
+                        </array>
+                    </dict>
+                </dict>
+                <key>PayloadDisplayName</key>
+                <string>VLC</string>
+                <key>PayloadEnabled</key>
+                <true/>
+                <key>PayloadIdentifier</key>
+                <string>3F51B185-6C56-4476-A0B7-D3FE8694B503</string>
+                <key>PayloadType</key>
+                <string>com.apple.ManagedClient.preferences</string>
+                <key>PayloadUUID</key>
+                <string>25216970-3BAC-4BAD-BE07-84C8126B65C0</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+            </dict>
+            {% endif %}
+
+
+            {% if macos_profile__disableautoupdates_xquartz %}
+            <dict>
+                <key>PayloadContent</key>
+                <dict>
+                    <key>org.macosforge.xquartz.X11</key>
+                    <dict>
+                        <key>Set-Once</key>
+                        <array>
+                            <dict>
+                                <key>mcx_preference_settings</key>
+                                <dict>
+                                    <key>SUAutomaticallyUpdate</key>
+                                    <false/>
+                                    <key>SUEnableAutomaticChecks</key>
+                                    <false/>
+                                </dict>
+                            </dict>
+                        </array>
+                    </dict>
+                </dict>
+                <key>PayloadDisplayName</key>
+                <string>Xquartz</string>
+                <key>PayloadEnabled</key>
+                <true/>
+                <key>PayloadIdentifier</key>
+                <string>130CF969-7087-459F-9173-79FA5F2818F7</string>
+                <key>PayloadType</key>
+                <string>com.apple.ManagedClient.preferences</string>
+                <key>PayloadUUID</key>
+                <string>B7B639E9-EA02-48D6-80E4-469DE0026421</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+            </dict>
+            {% endif %}
+
+
+            {% if macos_profile__disableautoupdates_switchdrive %}
+            <dict>
+                <key>PayloadContent</key>
+                <dict>
+                    <key>ch.switch.drive.desktopclient</key>
+                    <dict>
+                        <key>Set-Once</key>
+                        <array>
+                            <dict>
+                                <key>mcx_preference_settings</key>
+                                <dict>
+                                    <key>SUAutomaticallyUpdate</key>
+                                    <false/>
+                                    <key>SUEnableAutomaticChecks</key>
+                                    <false/>
+                                </dict>
+                            </dict>
+                        </array>
+                    </dict>
+                </dict>
+                <key>PayloadDisplayName</key>
+                <string>Switch Drive</string>
+                <key>PayloadEnabled</key>
+                <true/>
+                <key>PayloadIdentifier</key>
+                <string>340FFAE0-23B9-46BB-BF3A-E1D56ECF4E7A</string>
+                <key>PayloadType</key>
+                <string>com.apple.ManagedClient.preferences</string>
+                <key>PayloadUUID</key>
+                <string>5A43F0F3-71EA-43CE-8257-78C998A39A7A</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+            </dict>
+            {% endif %}
+
+
+            {% if macos_profile__disableautoupdates_evernote %}
+            <dict>
+                <key>PayloadContent</key>
+                <dict>
+                    <key>com.evernote.Evernote</key>
+                    <dict>
+                        <key>Set-Once</key>
+                        <array>
+                            <dict>
+                                <key>mcx_preference_settings</key>
+                                <dict>
+                                    <key>SUEnableAutomaticChecks</key>
+                                    <false/>
+                                </dict>
+                            </dict>
+                        </array>
+                    </dict>
+                </dict>
+                <key>PayloadDisplayName</key>
+                <string>Evernote</string>
+                <key>PayloadEnabled</key>
+                <true/>
+                <key>PayloadIdentifier</key>
+                <string>FF8DDD33-0C95-4A9A-978A-628D706951CB</string>
+                <key>PayloadType</key>
+                <string>com.apple.ManagedClient.preferences</string>
+                <key>PayloadUUID</key>
+                <string>BAAC0556-DC0A-4177-8483-835629C8EE28</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+            </dict>
+            {% endif %}
+
+
+            {% if macos_profile__disableautoupdates_mactracker %}
+            <dict>
+                <key>PayloadContent</key>
+                <dict>
+                    <key>com.mactrackerapp.Mactracker</key>
+                    <dict>
+                        <key>Set-Once</key>
+                        <array>
+                            <dict>
+                                <key>mcx_preference_settings</key>
+                                <dict>
+                                    <key>SUCheckAtStartup</key>
+                                    <false/>
+                                </dict>
+                            </dict>
+                        </array>
+                    </dict>
+                </dict>
+                <key>PayloadDisplayName</key>
+                <string>Mactracker</string>
+                <key>PayloadEnabled</key>
+                <true/>
+                <key>PayloadIdentifier</key>
+                <string>0014391D-F751-4545-91F3-7A884AC2FF6F</string>
+                <key>PayloadType</key>
+                <string>com.apple.ManagedClient.preferences</string>
+                <key>PayloadUUID</key>
+                <string>C4F629B9-28D4-48AC-BF9F-5B7C8C396802</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+            </dict>
+            {% endif %}
+
+
+            {% if macos_profile__disableautoupdates_teamviewer %}
+            <dict>
+                <key>PayloadContent</key>
+                <dict>
+                    <key>com.teamviewer.TeamViewer</key>
+                    <dict>
+                        <key>Set-Once</key>
+                        <array>
+                            <dict>
+                                <key>mcx_preference_settings</key>
+                                <dict>
+                                    <key>SUAutomaticallyUpdate</key>
+                                    <false/>
+                                    <key>SUEnableAutomaticChecks</key>
+                                    <false/>
+                                </dict>
+                            </dict>
+                        </array>
+                    </dict>
+                </dict>
+                <key>PayloadDisplayName</key>
+                <string>TeamViewer</string>
+                <key>PayloadEnabled</key>
+                <true/>
+                <key>PayloadIdentifier</key>
+                <string>13C5161C-30EE-413E-860D-988800F3D274</string>
+                <key>PayloadType</key>
+                <string>com.apple.ManagedClient.preferences</string>
+                <key>PayloadUUID</key>
+                <string>2B2834EC-DD91-449F-BE5D-0903BAC8A798</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+            </dict>
+            {% endif %}
+
+
+            {% if macos_profile__disableautoupdates_f5%}
+            <dict>
+                <key>PayloadContent</key>
+                <dict>
+                    <key>de.audiotranskription.F5</key>
+                    <dict>
+                        <key>Set-Once</key>
+                        <array>
+                            <dict>
+                                <key>mcx_preference_settings</key>
+                                <dict>
+                                    <key>SUEnableAutomaticChecks</key>
+                                    <false/>
+                                </dict>
+                            </dict>
+                        </array>
+                    </dict>
+                </dict>
+                <key>PayloadDisplayName</key>
+                <string>F5</string>
+                <key>PayloadEnabled</key>
+                <true/>
+                <key>PayloadIdentifier</key>
+                <string>FD2B736F-9879-432D-9B9F-89B2FD667271</string>
+                <key>PayloadType</key>
+                <string>com.apple.ManagedClient.preferences</string>
+                <key>PayloadUUID</key>
+                <string>FB243D13-BC13-48C5-86DA-F41032BA4B6A</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+            </dict>
+            {% endif %}
+
+
+            {% if macos_profile__disableautoupdates_bibdesk%}
+            <dict>
+                <key>PayloadContent</key>
+                <dict>
+                    <key>edu.ucsd.cs.mmccrack.bibdesk</key>
+                    <dict>
+                        <key>Set-Once</key>
+                        <array>
+                            <dict>
+                                <key>mcx_preference_settings</key>
+                                <dict>
+                                    <key>SUEnableAutomaticChecks</key>
+                                    <false/>
+                                </dict>
+                            </dict>
+                        </array>
+                    </dict>
+                </dict>
+                <key>PayloadDisplayName</key>
+                <string>Bibdesk</string>
+                <key>PayloadEnabled</key>
+                <true/>
+                <key>PayloadIdentifier</key>
+                <string>B405A707-EDE4-4EA8-9F58-07DD532F3930</string>
+                <key>PayloadType</key>
+                <string>com.apple.ManagedClient.preferences</string>
+                <key>PayloadUUID</key>
+                <string>3CA80C36-6FEC-4E6D-B7D3-FABBA85DA8C5</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+            </dict>
+            {% endif %}
+
+
+            {% if macos_profile__disableautoupdates_karabiner%}
+            <dict>
+                <key>PayloadContent</key>
+                <dict>
+                    <key>org.pqrs.Karabiner</key>
+                    <dict>
+                        <key>Set-Once</key>
+                        <array>
+                            <dict>
+                                <key>mcx_preference_settings</key>
+                                <dict>
+                                    <key>isCheckUpdate</key>
+                                    <false/>
+                                </dict>
+                            </dict>
+                        </array>
+                    </dict>
+                </dict>
+                <key>PayloadDisplayName</key>
+                <string>Karabiner</string>
+                <key>PayloadEnabled</key>
+                <true/>
+                <key>PayloadIdentifier</key>
+                <string>063A81DB-7604-451F-AA71-9CBE1D27ABD5</string>
+                <key>PayloadType</key>
+                <string>com.apple.ManagedClient.preferences</string>
+                <key>PayloadUUID</key>
+                <string>9CFF339D-86BB-4A2C-8554-013CBAF07BA2</string>
+                <key>PayloadVersion</key>
+                <integer>1</integer>
+            </dict>
+            {% endif %}
+        </array>
+
+        
+    <!-- Profile Description -->
+    <key>PayloadDescription</key>
+    <string>{{ macos_profile__disableautoupdates_PayloadDescription }}</string>
+    <key>PayloadDisplayName</key>
+    <string>{{ macos_profile__disableautoupdates_PayloadName}}</string>
+	<key>PayloadUUID</key>
+	<string>F505FB9A-C6F4-4697-8CA1-B8EAE30D0174</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+	<key>PayloadOrganization</key>
+	<string>{{ macos_profile__PayloadOrganization }}</string>
+	<key>PayloadRemovalDisallowed</key>
+	<{{ macos_profile__PayloadRemovalDisallowed }}/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+
+
+</dict>
+</plist>

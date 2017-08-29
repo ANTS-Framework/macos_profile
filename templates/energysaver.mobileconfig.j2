@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+
+    <!-- Profile Payload Content -->
+		<key>PayloadContent</key>
+		<array>
+			<dict>
+
+				<!-- Desktop -->
+				<key>com.apple.EnergySaver.desktop.ACPower</key>
+				<dict>
+					<key>Automatic Restart On Power Loss</key>
+					<integer>{{ macos_profile__energysaver_desktop_AutomaticRestartOnPowerLoss }}</integer>
+					<key>Disk Sleep Timer-boolean</key>
+					<{{ macos_profile__energysaver_desktop_DiskSleepTimer_boolean }}/>
+					<key>Display Sleep Timer</key>
+					<integer>{{ macos_profile__energysaver_desktop_DisplaySleepTimer }}</integer>
+					<key>Sleep On Power Button</key>
+					<integer>{{ macos_profile__energysaver_desktop_SleepOnPowerButton }}</integer>
+					<key>System Sleep Timer</key>
+					<integer>{{ macos_profile__energysaver_desktop_SystemSleepTimer }}</integer>
+					<key>Wake On LAN</key>
+					<integer>{{ macos_profile__energysaver_desktop_WakeOnLAN }}</integer>
+				</dict>
+				<key>com.apple.EnergySaver.desktop.ACPower-ProfileNumber</key>
+				<integer>-1</integer>
+
+				{% if macos_profile__energysaver_desktop_schedule_is_set %}
+				<!-- Desktop Schedule: only set if defined -->
+				<key>com.apple.EnergySaver.desktop.Schedule</key>
+				<dict>
+					<key>RepeatingPowerOff</key>
+					<dict>
+						<key>eventtype</key>
+						<string>shutdown</string>
+						<key>time</key>
+						<integer>{{ macos_profile__energysaver_desktop_schedule_shutdown_time }}</integer>
+						<key>weekdays</key>
+						<integer>{{ macos_profile__energysaver_desktop_schedule_shutdown_weekdays }}</integer>
+					</dict>
+					<key>RepeatingPowerOn</key>
+					<dict>
+						<key>eventtype</key>
+						<string>wakepoweron</string>
+						<key>time</key>
+						<integer>{{ macos_profile__energysaver_desktop_schedule_wakepower_time }}</integer>
+						<key>weekdays</key>
+						<integer>{{ macos_profile__energysaver_desktop_schedule_wakepower_weekdays }}</integer>
+					</dict>
+				</dict>
+				{% endif %}
+
+				<!-- Laptop with ACPower -->
+				<key>com.apple.EnergySaver.portable.ACPower</key>
+				<dict>
+					<key>Automatic Restart On Power Loss</key>
+					<integer>{{ macos_profile__energysaver_AutomaticRestartOnPowerLoss }}</integer>
+					<key>Disk Sleep Timer-boolean</key>
+					<{{ macos_profile__energysaver_DiskSleepTimer_boolean }}/>
+					<key>Display Sleep Timer</key>
+					<integer>{{ macos_profile__energysaver_DisplaySleepTimer }}</integer>
+					<key>Dynamic Power Step</key>
+					<integer>{{ macos_profile__energysaver_DynamicPowerStep }}</integer>
+					<key>Reduce Processor Speed</key>
+					<integer>{{ macos_profile__energysaver_ReduceProcessorSpeed }}</integer>
+					<key>Sleep On Power Button</key>
+					<integer>{{ macos_profile__energysaver_SleepOnPowerButton }}</integer>
+					<key>System Sleep Timer</key>
+					<integer>{{ macos_profile__energysaver_SystemSleepTimer }}</integer>
+					<key>Wake On LAN</key>
+					<integer>{{ macos_profile__energysaver_WakeOnLAN }}</integer>
+				</dict>
+			<key>com.apple.EnergySaver.portable.ACPower-ProfileNumber</key>
+			<integer>-1</integer>
+
+			<!-- Laptop with BatteryPower -->
+			<key>com.apple.EnergySaver.portable.BatteryPower</key>
+			<dict>
+				<key>Automatic Restart On Power Loss</key>
+				<integer>{{ macos_profile__energysaver_battery_AutomaticRestartOnPowerLoss }}</integer>
+				<key>Disk Sleep Timer-boolean</key>
+				<{{ macos_profile__energysaver_battery_DiskSleepTimer_boolean }}/>
+				<key>Display Sleep Timer</key>
+				<integer>{{ macos_profile__energysaver_battery_DisplaySleepTimer }}</integer>
+				<key>Dynamic Power Step</key>
+				<integer>{{ macos_profile__energysaver_battery_DynamicPowerStep }}</integer>
+				<key>Reduce Processor Speed</key>
+				<integer>{{ macos_profile__energysaver_battery_ReduceProcessorSpeed }}</integer>
+				<key>Sleep On Power Button</key>
+				<integer>{{ macos_profile__energysaver_battery_SleepOnPowerButton }}</integer>
+				<key>System Sleep Timer</key>
+				<integer>{{ macos_profile__energysaver_battery_SystemSleepTimer }}</integer>
+				<key>Wake On LAN</key>
+				<integer>{{ macos_profile__energysaver_battery_WakeOnLAN }}</integer>
+			</dict>
+			<key>com.apple.EnergySaver.portable.BatteryPower-ProfileNumber</key>
+			<integer>-1</integer>
+
+            <!-- Payload Information -->
+            <key>PayloadDescription</key>
+            <string></string>
+            <key>PayloadDisplayName</key>
+            <string>Energysaver</string>
+            <key>PayloadEnabled</key>
+            <true/>
+            <key>PayloadIdentifier</key>
+            <string>A237D5C3-3B73-46E3-9AA4-F51E745594F1</string>
+            <key>PayloadOrganization</key>
+            <string>{{ macos_profile__PayloadOrganization }}</string>
+            <key>PayloadType</key>
+            <string>com.apple.MCX</string>
+            <key>PayloadUUID</key>
+            <string>32A6C603-61CF-41F5-B156-BAEF30EB04B3</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+
+
+		</dict>
+	</array>
+
+
+    <!-- Profile Description -->
+	<key>PayloadDescription</key>
+	<string>{{ macos_profile__energysaver_PayloadDescription }}</string>
+	<key>PayloadDisplayName</key>
+	<string>{{ macos_profile__energysaver_PayloadDisplayName }}</string>
+	<key>PayloadUUID</key>
+	<string>91EA21E0-72B1-451D-9A6F-FDC4E254EABF</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+	<key>PayloadOrganization</key>
+	<string>{{ macos_profile__PayloadOrganization }}</string>
+	<key>PayloadRemovalDisallowed</key>
+	<{{ macos_profile__PayloadRemovalDisallowed }}/>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+
+
+</dict>
+</plist>
