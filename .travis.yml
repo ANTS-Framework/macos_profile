@@ -1,0 +1,25 @@
+language: python
+
+env:
+    - ANSIBLE_VERSION: "2.3.2.0"
+
+script:
+    - echo "Tests to be defined"
+
+notifications:
+    # Always send email notification
+    email:
+        on_success: always
+        on_failure: always
+        on_start: always
+        on_cancel: always
+        on_error: always
+    # Only notify ansible galaxy on success
+    webhooks:
+        urls:
+            - https://galaxy.ansible.com/api/v1/notifications/
+        on_success: always
+        on_failure: never
+        on_start: never
+        on_cancel: never
+        on_error: never
