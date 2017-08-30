@@ -301,6 +301,7 @@ macos_profile__safari_HomePage: "https://www.apple.com/"
 macos_profile__safari_NewWindowBehavior: "0"   # New windows open with Homepage
 macos_profile__safari_NewTabBehavior: "0" # New tab open with Homepage
 macos_profile__safari_ShowFavoritesBar: "false"
+macos_profile__safari_ShowFavoritesBar_v2: "0" # Don't show favorites bar
 macos_profile__safari_AutoFillCreditCardData: "false"
 macos_profile__safari_AutoFillPasswords: "false"
 macos_profile__safari_AutoFillMiscellaneousForms: "false"
