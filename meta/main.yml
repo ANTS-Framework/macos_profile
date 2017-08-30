@@ -1,6 +1,6 @@
 galaxy_info:
-  author: your name
-  description: your description
+  author: Balz Aschwanden
+  description: Install macOS profiles from template or remove installed profiles by identifier.
   company: IT Services University of Basel
   license: GPLv3
   min_ansible_version: 2.3.2.0
