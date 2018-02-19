@@ -1,6 +1,6 @@
 ---
 
-- name: Set profile file name to "{{ macos_profile__identifierPrefix }}"."{{ mobileconfig.template }}"
+- name: "Set profile file name to {{ macos_profile__identifierPrefix }}.{{ mobileconfig.template }}"
   set_fact:
     macos_profile__profile: "{{ macos_profile__identifierPrefix }}.{{ mobileconfig.template }}"
 

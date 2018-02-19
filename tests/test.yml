@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
   remote_user: root
+  vars:
+    - mobileconfig: { template: "finder", state: "present" }
   roles:
-    - macos_profile
+  - role: macos_profile
