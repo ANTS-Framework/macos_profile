@@ -20,12 +20,12 @@
   roles:
   - role: macos_profile
 
-- hosts: localhost
-  remote_user: root
-  vars:
-    - mobileconfig: { template: "directory", state: "present" }
-  roles:
-  - role: macos_profile
+#- hosts: localhost
+#  remote_user: root
+#  vars:
+#    - mobileconfig: { template: "directory", state: "present" }
+#  roles:
+#  - role: macos_profile
 
 - hosts: localhost
   remote_user: root
@@ -148,12 +148,12 @@
   roles:
   - role: macos_profile
 
-- hosts: localhost
-  remote_user: root
-  vars:
-    - mobileconfig: { template: "directory", state: "absent" }
-  roles:
-  - role: macos_profile
+#- hosts: localhost
+#  remote_user: root
+#  vars:
+#    - mobileconfig: { template: "directory", state: "absent" }
+#  roles:
+#  - role: macos_profile
 
 - hosts: localhost
   remote_user: root
