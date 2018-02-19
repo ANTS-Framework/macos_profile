@@ -2,6 +2,253 @@
 - hosts: localhost
   remote_user: root
   vars:
+    - mobileconfig: { template: "airport", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "applicationaccess", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "applicationaccessnew", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "directory", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "disableautoupdates", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "dock", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "energysaver", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "familycontrols", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
     - mobileconfig: { template: "finder", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "gatekeeper", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "loginitems", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "loginwindow", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "menuextras", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "munki", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "safari", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "sal", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "skipsetup", state: "present" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "softwareupdate", state: "present" }
+  roles:
+  - role: macos_profile
+
+# Remove profiles again
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "airport", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "applicationaccess", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "applicationaccessnew", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "directory", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "disableautoupdates", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "dock", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "energysaver", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "familycontrols", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "finder", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "gatekeeper", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "loginitems", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "loginwindow", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "menuextras", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "munki", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "safari", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "sal", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "skipsetup", state: "absent" }
+  roles:
+  - role: macos_profile
+
+- hosts: localhost
+  remote_user: root
+  vars:
+    - mobileconfig: { template: "softwareupdate", state: "absent" }
   roles:
   - role: macos_profile
