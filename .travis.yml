@@ -1,10 +1,34 @@
-language: python
+os: osx
+sudo: required
 
 env:
-    - ANSIBLE_VERSION: "2.3.2.0"
+    - ANSIBLE_VERSION: "2.4.3.0"
+
+before_install:
+  - ./tests/installPython.sh
+
+install:
+  # Install Ansible.
+  - sudo pip install ansible
+
+  # Add ansible.cfg to pick up roles path.
+  - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
+
+  # Check if ansible cfg was created correctly
+  - cat ansible.cfg 
 
 script:
-    - echo "Tests to be defined"
+  - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
+  
+  # Run the role/playbook with ansible-playbook.
+  - sudo ansible-playbook -i tests/inventory tests/test.yml --connection=local
+  
+  # Run the role/playbook again, checking to make sure it's idempotent.
+  - >
+    sudo ansible-playbook -i tests/inventory tests/test.yml --connection=local
+    | grep -q 'changed=0.*failed=0'
+    && (echo 'Idempotence test: pass' && exit 0)
+    || (echo 'Idempotence test: fail' && exit 1)
 
 notifications:
     # Always send email notification
