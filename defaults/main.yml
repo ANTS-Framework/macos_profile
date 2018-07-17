@@ -364,3 +364,16 @@ macos_profile__softwareupdate_PayloadDescription: "Set Apple Software Update Ser
 
 macos_profile__CatalogURL: "http://su.pretendcorp.com:8088/index.sucatalog"
 macos_profile__AllowPreReleaseInstallation: "false"
+
+#vpn
+macos_profile__vpn_PayloadDisplayName: "VPN"
+macos_profile__vpn_PayloadDescription: "Default VPN settings"
+
+macos_profile__vpn_UserDefinedName: "VPN"
+macos_profile__vpn_VPNType: "L2TP"
+macos_profile__vpn_PPP_CommRemoteAddress: "vpn.pretendcorp.com"
+macos_profile__vpn_PPP_AuthName: "user"
+macos_profile__vpn_IPv4_OverridePrimary: "true"
+macos_profile__vpn_IPSec_OnDemandEnabled: 1
+macos_profile__vpn_IPSec_AuthenticationMethod: "SharedSecret"
+macos_profile__vpn_IPSec_SharedSecret: base64encodedsharedsecret

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+
+
+<!-- Profile Payload Content -->
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <!-- VPN Settings -->
+            <key>UserDefinedName</key>
+            <string>{{ macos_profile__vpn_UserDefinedName }}</string>
+            <key>VPNType</key>
+            <string>{{ macos_profile__vpn_VPNType }}</string>
+            <key>PPP</key>
+            <dict>
+                <key>CommRemoteAddress</key>
+                <string>{{ macos_profile__vpn_PPP_CommRemoteAddress }}</string>
+                <key>AuthName</key>
+                <string>{{ macos_profile__vpn_PPP_AuthName }}</string>
+            </dict>		
+            <key>IPv4</key>
+            <dict>
+                <key>OverridePrimary</key>
+                <{{ macos_profile__vpn_IPv4_OverridePrimary }}/>
+            </dict>				
+            <key>IPSec</key>
+            <dict>
+                <key>OnDemandEnabled</key>
+                <integer>{{ macos_profile__vpn_IPSec_OnDemandEnabled }}</integer>
+                <key>AuthenticationMethod</key>
+                <string>{{ macos_profile__vpn_IPSec_AuthenticationMethod }}</string>
+                <key>SharedSecret</key>
+                <data>{{ macos_profile__vpn_IPSec_SharedSecret }}</data>
+            </dict>
+
+            <!-- Payload Information -->
+            <key>PayloadDisplayName</key>
+            <string>VPN Settings</string>
+            <key>PayloadEnabled</key>
+            <true/>
+            <key>PayloadIdentifier</key>
+            <string>DB5548FD-C010-4755-B27F-C70566B78369</string>
+            <key>PayloadType</key>
+            <string>com.apple.vpn.managed</string>
+            <key>PayloadUUID</key>
+            <string>198138B1-44D5-4CA2-BE5C-765EC868C630</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+
+        </dict>
+    </array>
+
+
+    <!-- Profile Description -->
+    <key>PayloadDescription</key>
+    <string>{{ macos_profile__vpn_PayloadDescription }}</string>
+    <key>PayloadDisplayName</key>
+    <string>{{ macos_profile__vpn_PayloadDisplayName }}</string>
+    <key>PayloadUUID</key>
+    <string>C35A65E0-4F2A-4422-BBC5-60D872EC4730</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+    <key>PayloadEnabled</key>
+    <true/>
+    <key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+    <key>PayloadOrganization</key>
+    <string>{{ macos_profile__PayloadOrganization }}</string>
+    <key>PayloadRemovalDisallowed</key>
+    <{{ macos_profile__PayloadRemovalDisallowed }}/>
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+
+
+</dict>
+</plist>
