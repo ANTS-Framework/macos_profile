@@ -304,6 +304,18 @@ macos_profile__munki_SuppressUserNotification: "false"
 macos_profile__munki_UnattendedAppleUpdates: "false"
 macos_profile__munki_UseClientCertificate: "0"
 
+# passwordpolicy
+macos_profile__passwordpolicy_PayloadDisplayName: "Password Policy"
+macos_profile__passwordpolicy_PayloadDescription: "Default Password Policy settings"
+
+macos_profile__passwordpolicy_allowSimple: "true"
+macos_profile__passwordpolicy_forcePIN: "false"
+macos_profile__passwordpolicy_maxPINAgeInDays: "60"
+macos_profile__passwordpolicy_minComplexChars: "0"
+macos_profile__passwordpolicy_minLength: "0"
+macos_profile__passwordpolicy_requireAlphanumeric: "false"
+macos_profile__passwordpolicy_pinHistory: "15"
+
 # safari
 macos_profile__safari_PayloadDisplayName: "Safari"
 macos_profile__safari_PayloadDescription: "Default settings for safari"
