@@ -199,6 +199,15 @@ macos_profile__finder_ShowMountedServersOnDesktop: "true"
 macos_profile__finder_ShowRemovableMediaOnDesktop: "true"
 macos_profile__finder_WarnOnEmptyTrash: "true"
 
+# firewall
+macos_profile__firewall_PayloadDisplayName: "Firewall"
+macos_profile__firewall_PayloadDescription: "Default firewall settings"
+
+macos_profile__firewall_EnableFirewall: "false"
+macos_profile__firewall_BlockAllIncoming: "false"
+macos_profile__firewall_EnableStealthMode: "false"
+macos_profile__firewall_Applications: []
+
 # gatekeeper
 macos_profile__gatekeeper_PayloadDisplayName: "Gatekeeper"
 macos_profile__gatekeeper_PayloadDescription: "Default Gatekeeper settings"
