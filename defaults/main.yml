@@ -266,6 +266,7 @@ macos_profile__menuextras_clock: "true"
 macos_profile__menuextras_display: "false"
 macos_profile__menuextras_remotedesktop: "false"
 macos_profile__menuextras_timemachine: "false"
+macos_profile__menuextras_vpn: "false"
 macos_profile__menuextras_user: "true"
 
 # munki
