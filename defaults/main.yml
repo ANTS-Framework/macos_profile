@@ -248,6 +248,7 @@ macos_profile__loginwindow_screensaver_askForPassword: "true"
 macos_profile__loginwindow_screensaver_askForPasswordDelay: "10"
 macos_profile__loginwindow_logoutAutoLogOutDelay: "0" # Disabled
 macos_profile__loginwindow_autologoutAutoLogOutDelay: "0" # Disabled
+macos_profile__loginwindow_UseComputerNameForComputerRecordName: "false"
 
 macos_profile__loginwindow_disableguestaccount: "true"
 macos_profile__loginwindow_enableguestaccount: "false"
