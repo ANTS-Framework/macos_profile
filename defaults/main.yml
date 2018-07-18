@@ -199,6 +199,15 @@ macos_profile__finder_ShowMountedServersOnDesktop: "true"
 macos_profile__finder_ShowRemovableMediaOnDesktop: "true"
 macos_profile__finder_WarnOnEmptyTrash: "true"
 
+# firewall
+macos_profile__firewall_PayloadDisplayName: "Firewall"
+macos_profile__firewall_PayloadDescription: "Default firewall settings"
+
+macos_profile__firewall_EnableFirewall: "false"
+macos_profile__firewall_BlockAllIncoming: "false"
+macos_profile__firewall_EnableStealthMode: "false"
+macos_profile__firewall_Applications: []
+
 # gatekeeper
 macos_profile__gatekeeper_PayloadDisplayName: "Gatekeeper"
 macos_profile__gatekeeper_PayloadDescription: "Default Gatekeeper settings"
@@ -233,7 +242,6 @@ macos_profile__loginwindow_restartdisabled: "false"
 macos_profile__loginwindow_RestartDisabledWhileLoggedIn: "false"
 macos_profile__loginwindow_shutdowndisabled: "false"
 macos_profile__loginwindow_ShutDownDisabledWhileLoggedIn: "false"
-macos_profile__loginwindow_retriesuntilhint: "3"
 macos_profile__loginwindow_showfullname: "true"
 macos_profile__loginwindow_showotherusers_managed: "false"
 macos_profile__loginwindow_HideAdminUsers: "true"
@@ -248,6 +256,7 @@ macos_profile__loginwindow_screensaver_askForPassword: "true"
 macos_profile__loginwindow_screensaver_askForPasswordDelay: "10"
 macos_profile__loginwindow_logoutAutoLogOutDelay: "0" # Disabled
 macos_profile__loginwindow_autologoutAutoLogOutDelay: "0" # Disabled
+macos_profile__loginwindow_UseComputerNameForComputerRecordName: "false"
 
 macos_profile__loginwindow_disableguestaccount: "true"
 macos_profile__loginwindow_enableguestaccount: "false"
@@ -266,6 +275,7 @@ macos_profile__menuextras_clock: "true"
 macos_profile__menuextras_display: "false"
 macos_profile__menuextras_remotedesktop: "false"
 macos_profile__menuextras_timemachine: "false"
+macos_profile__menuextras_vpn: "false"
 macos_profile__menuextras_user: "true"
 
 # munki
@@ -292,6 +302,18 @@ macos_profile__munki_SuppressStopButtonOnInstall: "false"
 macos_profile__munki_SuppressUserNotification: "false"
 macos_profile__munki_UnattendedAppleUpdates: "false"
 macos_profile__munki_UseClientCertificate: "0"
+
+# passwordpolicy
+macos_profile__passwordpolicy_PayloadDisplayName: "Password Policy"
+macos_profile__passwordpolicy_PayloadDescription: "Default Password Policy settings"
+
+macos_profile__passwordpolicy_allowSimple: "true"
+macos_profile__passwordpolicy_forcePIN: "false"
+macos_profile__passwordpolicy_maxPINAgeInDays: "60"
+macos_profile__passwordpolicy_minComplexChars: "0"
+macos_profile__passwordpolicy_minLength: "0"
+macos_profile__passwordpolicy_requireAlphanumeric: "false"
+macos_profile__passwordpolicy_pinHistory: "15"
 
 # safari
 macos_profile__safari_PayloadDisplayName: "Safari"
@@ -342,3 +364,16 @@ macos_profile__softwareupdate_PayloadDescription: "Set Apple Software Update Ser
 
 macos_profile__CatalogURL: "http://su.pretendcorp.com:8088/index.sucatalog"
 macos_profile__AllowPreReleaseInstallation: "false"
+
+#vpn
+macos_profile__vpn_PayloadDisplayName: "VPN"
+macos_profile__vpn_PayloadDescription: "Default VPN settings"
+
+macos_profile__vpn_UserDefinedName: "VPN"
+macos_profile__vpn_VPNType: "L2TP"
+macos_profile__vpn_PPP_CommRemoteAddress: "vpn.pretendcorp.com"
+macos_profile__vpn_PPP_AuthName: "user"
+macos_profile__vpn_IPv4_OverridePrimary: "true"
+macos_profile__vpn_IPSec_OnDemandEnabled: 1
+macos_profile__vpn_IPSec_AuthenticationMethod: "SharedSecret"
+macos_profile__vpn_IPSec_SharedSecret: base64encodedsharedsecret

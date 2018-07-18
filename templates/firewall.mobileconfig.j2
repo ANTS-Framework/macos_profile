@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+
+    <!-- Profile Payload Content -->
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+
+            <!-- com.apple.security.firewall -->
+            <key>EnableFirewall</key>
+            <{{ macos_profile__firewall_EnableFirewall }}/>
+            <key>BlockAllIncoming</key>
+            <{{ macos_profile__firewall_BlockAllIncoming }}/>
+            <key>EnableStealthMode</key>
+            <{{ macos_profile__firewall_EnableStealthMode }}/>
+            <key>Applications</key>
+            <array>
+                {% for application in macos_profile__firewall_Applications %}
+                    <dict>
+                        <key>BundleID</key>
+                        <string>{{ application.bundleid }}</string>
+                        <key>Allowed</key>
+                        <{{ application.allowed }}/>						
+                    </dict>
+                {% endfor %}
+            </array>
+
+            <!-- Payload Information -->
+            <key>PayloadDisplayName</key>
+            <string>Firewall Settings</string>
+            <key>PayloadEnabled</key>
+            <true/>
+            <key>PayloadIdentifier</key>
+            <string>495E8259-ACF6-43D5-911C-D31DB7760C50</string>
+            <key>PayloadType</key>
+            <string>com.apple.security.firewall</string>
+            <key>PayloadUUID</key>
+            <string>3197E875-10FC-4794-BE8F-BCFC5B3A3C8C</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+
+
+        </dict>
+    </array>
+
+
+    <!-- Profile Description -->
+    <key>PayloadDescription</key>
+    <string>{{ macos_profile__firewall_PayloadDescription }}</string>
+    <key>PayloadDisplayName</key>
+    <string>{{ macos_profile__firewall_PayloadDisplayName }}</string>
+    <key>PayloadUUID</key>
+    <string>39B85624-3985-4912-BB24-B7E40F16DB96</string>
+
+
+    <!-- Organisation Information (Identical for every Profile) -->
+    <key>PayloadEnabled</key>
+    <true/>
+    <key>PayloadIdentifier</key>
+    <string>{{ macos_profile__profile }}</string>
+    <key>PayloadOrganization</key>
+    <string>{{ macos_profile__PayloadOrganization }}</string>
+    <key>PayloadRemovalDisallowed</key>
+    <{{ macos_profile__PayloadRemovalDisallowed }}/>
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+
+
+</dict>
+</plist>
