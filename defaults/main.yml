@@ -219,15 +219,10 @@ macos_profile__gatekeeper_EnableAssessment: "false"
 macos_profile__loginitems_PayloadDisplayName: "Login Items"
 macos_profile__loginitems_PayloadDescription: "Preset login items"
 
-macos_profile__loginitems_apps_enabled: false # Default: Don't add apps to login window
-macos_profile__loginitems_apps:
-    - { path: "/Applications/Utilities/Terminal.app", hide: "true" }
-macos_profile__loginitems_network_mounts_enabled: false # Default: Dont' add network mounts
-macos_profile__loginitems_network_mounts:
-    - { url: "smb://guest:@pretendcorp.com/home/secret", hide: "false" }
-macos_profile__loginitems_items_enabled: false # Default: Dont' add items
 macos_profile__loginitems_items:
-    - { path: "/Volumes", hide: "false" }
+    - { path: "/Volumes", hide: "false" } # Example Folder
+    - { path: "/Applications/Utilities/Terminal.app", hide: "true" } # Example App
+    - { url: "smb://guest:@pretendcorp.com/home/secret", hide: "false", auth: "true" } # Example Network Mount
 
 # loginwindow
 macos_profile__loginwindow_PayloadDisplayName: "Login Window"
