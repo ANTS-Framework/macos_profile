@@ -9,6 +9,7 @@
   shell: /usr/bin/profiles -C | grep -w "{{ macos_profile__profile }}"
   changed_when: False
   register: installedprofile
+  check_mode: no
   failed_when:
       - installedprofile.rc != 0
       - installedprofile.rc != 1
