@@ -7,9 +7,11 @@
 # grep returns an exit code of 1 when it doesn't match any lines
 - name: "Check if profile {{ macos_profile__profile }} is installed at computer level"
   shell: /usr/bin/profiles -C | grep -w "{{ macos_profile__profile }}"
-  ignore_errors: yes
   changed_when: False
   register: installedprofile
+  failed_when:
+      - installedprofile.rc != 0
+      - installedprofile.rc != 1
 
 - include: profile_present.yml
   when: mobileconfig.state == "present"
