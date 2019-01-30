@@ -10,11 +10,22 @@
 
         <!-- SoftwareUpdate -->
 		<dict>
-			<key>AllowPreReleaseInstallation</key>
-            <{{ macos_profile__AllowPreReleaseInstallation }}/>
-			<key>CatalogURL</key>
-			<string>{{ macos_profile__CatalogURL }}</string>
-
+{% if macos_profile__softwareupdate_AllowPreReleaseInstallation is defined %}
+            <key>AllowPreReleaseInstallation</key>
+            <{{ macos_profile__softwareupdate_AllowPreReleaseInstallation }}/>
+{% endif %}
+{% if macos_profile__softwareupdate_CatalogURL is defined %}
+            <key>CatalogURL</key>
+            <string>{{ macos_profile__softwareupdate_CatalogURL }}</string>
+{% endif %}
+{% if macos_profile__softwareupdate_ManagedDeferredInstallDelay is defined %}
+            <key>ManagedDeferredInstallDelay</key>
+            <integer>{{ macos_profile__softwareupdate_ManagedDeferredInstallDelay }}</integer>
+{% endif %}
+{% if macos_profile__softwareupdate_forceDelayedSoftwareUpdates is defined %}
+            <key>forceDelayedSoftwareUpdates</key>
+            <{{ macos_profile__softwareupdate_forceDelayedSoftwareUpdates }}/>
+{% endif %}
             <!-- Payload Information -->
 			<key>PayloadDescription</key>
 			<string></string>

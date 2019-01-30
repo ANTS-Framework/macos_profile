@@ -357,9 +357,6 @@ macos_profile__skipsetup_DisableAppleDiagonstics: "true"
 macos_profile__softwareupdate_PayloadDisplayName: "Apple Software Updates"
 macos_profile__softwareupdate_PayloadDescription: "Set Apple Software Update Server"
 
-macos_profile__CatalogURL: "http://su.pretendcorp.com:8088/index.sucatalog"
-macos_profile__AllowPreReleaseInstallation: "false"
-
 #vpn
 macos_profile__vpn_PayloadDisplayName: "VPN"
 macos_profile__vpn_PayloadDescription: "Default VPN settings"
