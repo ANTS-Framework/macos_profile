@@ -128,7 +128,7 @@ macos_profile__energysaver_PayloadDescription: "Default Energy Saver Profile"
 
 ## Laptop
 macos_profile__energysaver_AutomaticRestartOnPowerLoss: "1"
-macos_profile__energysaver_DiskSleepTimer_boolean: "true"
+macos_profile__energysaver_DiskSleepTimer_boolean: "false"
 macos_profile__energysaver_DisplaySleepTimer: "15"
 macos_profile__energysaver_DynamicPowerStep: "1"
 macos_profile__energysaver_ReduceProcessorSpeed: "0"
@@ -138,7 +138,7 @@ macos_profile__energysaver_WakeOnLAN: "1"
 
 ## Laptop Battery
 macos_profile__energysaver_battery_AutomaticRestartOnPowerLoss: "1"
-macos_profile__energysaver_battery_DiskSleepTimer_boolean: "true"
+macos_profile__energysaver_battery_DiskSleepTimer_boolean: "false"
 macos_profile__energysaver_battery_DisplaySleepTimer: "15"
 macos_profile__energysaver_battery_DynamicPowerStep: "1"
 macos_profile__energysaver_battery_ReduceProcessorSpeed: "0"
@@ -148,7 +148,7 @@ macos_profile__energysaver_battery_WakeOnLAN: "1"
 
 ## Desktop
 macos_profile__energysaver_desktop_AutomaticRestartOnPowerLoss: "1"
-macos_profile__energysaver_desktop_DiskSleepTimer_boolean: "true"
+macos_profile__energysaver_desktop_DiskSleepTimer_boolean: "false"
 macos_profile__energysaver_desktop_DisplaySleepTimer: "5"
 macos_profile__energysaver_desktop_SleepOnPowerButton: "1"
 macos_profile__energysaver_desktop_SystemSleepTimer: "10"
