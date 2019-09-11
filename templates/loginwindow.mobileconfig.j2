@@ -16,6 +16,17 @@
 				<false/>
 				<key>LoginwindowText</key>
 				<string>{% for text in macos_profile__loginwindow_message %}{{ text }}{% endfor %}</string>
+
+            {% if macos_profile__loginwindow_LogOutDisabledWhileLoggedIn is defined %}
+				<key>LogOutDisabledWhileLoggedIn</key>
+				<{{ macos_profile__loginwindow_LogOutDisabledWhileLoggedIn }}/>
+            {% endif %}
+
+            {% if macos_profile__loginwindow_PowerOffDisabledWhileLoggedIn is defined %}
+				<key>PowerOffDisabledWhileLoggedIn</key>
+				<{{ macos_profile__loginwindow_PowerOffDisabledWhileLoggedIn }}/>
+            {% endif %}
+
 				<key>RestartDisabled</key>
 				<{{ macos_profile__loginwindow_restartdisabled }}/>
 				<key>RestartDisabledWhileLoggedIn</key>
